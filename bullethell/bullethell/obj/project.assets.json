@@ -7537,11 +7537,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethell\\bullethell\\bullethell.csproj",
+      "projectUniqueName": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\bullethell.csproj",
       "projectName": "bullethell",
-      "projectPath": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethell\\bullethell\\bullethell.csproj",
+      "projectPath": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\bullethell.csproj",
       "packagesPath": "C:\\Users\\kayab\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethell\\bullethell\\obj\\",
+      "outputPath": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kayab\\AppData\\Roaming\\NuGet\\NuGet.Config",

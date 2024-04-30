@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace bullethell
 {
@@ -12,21 +13,37 @@ namespace bullethell
         private GraphicsDevice device;
         entity box;
         Vector2 boxpos;
+
+        collisionobjects testcollider;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
+            _graphics.PreferredBackBufferHeight = 540;
+            _graphics.PreferredBackBufferWidth = 720;
+            
             Content.RootDirectory = "Content";
-            IsMouseVisible = true;
+            IsMouseVisible = false;
         }
 
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            //box initialize
+            
             box = new entity();
             box.tag = "debugItem";
             box.id = 0;
             box.name = "box";
-            box.position = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
+            box.position = new Vector2(_graphics.PreferredBackBufferWidth / 4, _graphics.PreferredBackBufferHeight / 4);
+
+            //collider initialize
+            testcollider = new collisionobjects();
+            testcollider.position = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
+            testcollider.collisionWidth = 64;
+            testcollider.collisionHeight = 32;
+            testcollider.entities.Add(box);
+
+            box.collider.entities.Add(box);
             base.Initialize();
         }
 
@@ -40,20 +57,26 @@ namespace bullethell
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-            box.entityUpdate(gameTime);
+            {
+                
+                _graphics.ToggleFullScreen();
 
-            // TODO: Add your update logic here
-
+            }
+                
+            
+            Console.WriteLine(gameTime.TotalGameTime.TotalSeconds);
+            
+            testcollider.UpdateCollisionObjects();
+            box.entityUpdate(gameTime, _graphics);
             base.Update(gameTime);
         }
-
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.DarkTurquoise);
 
             // TODO: Add your drawing code here
             box.drawEntity(_spriteBatch, GraphicsDevice);
+            testcollider.drawCollider(_spriteBatch, GraphicsDevice);
             base.Draw(gameTime);
             
         }

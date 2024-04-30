@@ -17,64 +17,115 @@ namespace bullethell.classes
         public Texture2D basetex;
         public Vector2 position;
         public float rotation;
+
+        #region debug variables
+        public int width = 32;
+        public int height = 32;
+        double V;
+        int speed = 200;
+        #endregion
+        public collisionobjects collider = new collisionobjects();
         public entity()
         {
-
+            collider.collisionWidth = 64;
+            collider.collisionHeight = 64;
+            collider.position = position;
         }
         public Rectangle hitbox
         {
             get
             {
-                return new Rectangle((int)position.X, (int)position.Y, 32, 64);
+                return new Rectangle((int)position.X, (int)position.Y, width, height);
             }
         }
-        public void entityUpdate(GameTime GT)
+        
+        public void entityUpdate(GameTime GT, GraphicsDeviceManager graphics)
         {
             #region debug
             MouseState mouse = Mouse.GetState();
-            var distance = new Vector2(mouse.X - position.X, mouse.Y - position.Y);
+            //var distance = new Vector2(mouse.X - position.X, mouse.Y - position.Y);
             //rotation = (float)Math.Atan2(distance.Y, distance.X);
             rotation = 0;
-            
+            collider.position = position;
             var keystateplayer = Keyboard.GetState();
-
-            if (keystateplayer.IsKeyDown(Keys.W))
-            {
-                position.Y -= 100 * (float)GT.ElapsedGameTime.TotalSeconds;
-            }
-            if (keystateplayer.IsKeyDown(Keys.S))
-            {
-                position.Y += 100 * (float)GT.ElapsedGameTime.TotalSeconds;
-            }
+            
             if (keystateplayer.IsKeyDown(Keys.A))
             {
-                float pp = MathF.Sin((((float)GT.TotalGameTime.TotalSeconds * 10)));
-                rotation = pp / 5;
-                position.X -= 100 * (float)GT.ElapsedGameTime.TotalSeconds;
+                if (hitbox.Left > 0)
+                {
+                    float pp = MathF.Sin((((float)GT.TotalGameTime.TotalSeconds * 20)));
+                    //rotation = pp / 5;
+                    //rotation = 179 + pp / 10;
+                    
+                    position.X -= speed * (float)GT.ElapsedGameTime.TotalSeconds;
+                    collider.position.X -= speed * (float)GT.ElapsedGameTime.TotalSeconds;
+
+                }
             }
             if (keystateplayer.IsKeyDown(Keys.D))
             {
-                float pp = MathF.Sin((((float)GT.TotalGameTime.TotalSeconds * 10)));
-                rotation = pp / 5;
-                position.X += 100 * (float)GT.ElapsedGameTime.TotalSeconds;
+                if (hitbox.Right <= graphics.PreferredBackBufferWidth)
+                {
+                    float pp = MathF.Sin((((float)GT.TotalGameTime.TotalSeconds * 20)));
+                    //rotation = pp / 5;
+                    //rotation = -179 + pp / 10;
+                    
+                    position.X += speed * (float)GT.ElapsedGameTime.TotalSeconds;
+                    collider.position.X += speed * (float)GT.ElapsedGameTime.TotalSeconds;
+                }
+                
             }
+            if (keystateplayer.IsKeyDown(Keys.W))
+            {
+                if (hitbox.Top > 0)
+                {
+                    
+                    position.Y -= speed * (float)GT.ElapsedGameTime.TotalSeconds;
+                    collider.position.Y -= speed * (float)GT.ElapsedGameTime.TotalSeconds;
+                }
+                
+            }
+            
+            if (keystateplayer.IsKeyDown(Keys.S))
+            {
+                if (hitbox.Bottom < graphics.PreferredBackBufferHeight)
+                {
+                    
+                    position.Y += speed * (float)GT.ElapsedGameTime.TotalSeconds;
+                    collider.position.Y += speed * (float)GT.ElapsedGameTime.TotalSeconds;
+                }
+            }
+            //if (hitbox.Bottom <= graphics.PreferredBackBufferHeight + 32)
+            //{
+            //    position.Y += 500 * (float)GT.ElapsedGameTime.TotalSeconds;
+            //}
+
+
+            
+
+
+
+
+
             #endregion
         }
         public void drawEntity(SpriteBatch SB,GraphicsDevice GD)
         {
+            collider.drawCollider(SB, GD);
             SB.Begin();
+          
 
-            
             // creates single pixel texture
             if (basetex == null)
             {
                 basetex = new Texture2D(GD, 1, 1);
-                basetex.SetData(new[] { Color.White });
+                basetex.SetData(new[] { Color.DeepPink });
             }
-
-            SB.Draw(basetex,position, hitbox, Color.Multiply(Color.White,1), rotation,new Vector2(hitbox.Width/2,hitbox.Height/2),1f,SpriteEffects.None,0);
+            
+            SB.Draw(basetex,position, hitbox, Color.Multiply(Color.White,1), rotation,new Vector2(0, 0),1f,SpriteEffects.None,1);
 
             SB.End();
+            
         }
 
 

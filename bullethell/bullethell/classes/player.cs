@@ -9,7 +9,16 @@ namespace bullethell.classes
     internal class player : entity
     {
 
-        public void Draw()
+
+        public player()
+        {
+
+        }
+        public void playerUpdate()
+        {
+
+        }
+        public void playerDraw()
         {
 
         }
