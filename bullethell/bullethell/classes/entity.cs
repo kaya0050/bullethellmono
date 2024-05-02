@@ -15,12 +15,15 @@ namespace bullethell.classes
         public string tag;
         public string name;
         public Texture2D basetex;
+        Color color = Color.White;
+
+
         public Vector2 position;
         public float rotation;
-
-        #region debug variables
         public int width = 32;
         public int height = 32;
+        #region debug variables
+
         double V;
         int speed = 200;
         #endregion
@@ -29,7 +32,7 @@ namespace bullethell.classes
         {
             collider.collisionWidth = 64;
             collider.collisionHeight = 64;
-            collider.position = position;
+            
         }
         public Rectangle hitbox
         {
@@ -45,8 +48,12 @@ namespace bullethell.classes
             MouseState mouse = Mouse.GetState();
             //var distance = new Vector2(mouse.X - position.X, mouse.Y - position.Y);
             //rotation = (float)Math.Atan2(distance.Y, distance.X);
-            rotation = 0;
-            collider.position = position;
+            //rotation += 1 * (float)GT.ElapsedGameTime.TotalSeconds;
+            
+
+            // center collider
+            collider.position = new Vector2(position.X - 16,position.Y - 16);
+            
             var keystateplayer = Keyboard.GetState();
             
             if (keystateplayer.IsKeyDown(Keys.A))
@@ -111,6 +118,7 @@ namespace bullethell.classes
         }
         public void drawEntity(SpriteBatch SB,GraphicsDevice GD)
         {
+            collider.color = Color.DarkGray;
             collider.drawCollider(SB, GD);
             SB.Begin();
           
@@ -119,10 +127,10 @@ namespace bullethell.classes
             if (basetex == null)
             {
                 basetex = new Texture2D(GD, 1, 1);
-                basetex.SetData(new[] { Color.DeepPink });
+                basetex.SetData(new[] { color });
             }
             
-            SB.Draw(basetex,position, hitbox, Color.Multiply(Color.White,1), rotation,new Vector2(0, 0),1f,SpriteEffects.None,1);
+            SB.Draw(basetex,position, hitbox, Color.Multiply(Color.White,1f), rotation,new Vector2(0, 0),1f,SpriteEffects.None,1);
 
             SB.End();
             

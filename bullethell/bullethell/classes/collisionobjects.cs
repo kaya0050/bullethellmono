@@ -13,6 +13,7 @@ namespace bullethell.classes
     {
         public List<entity> entities;
         public Vector2 position;
+        public float rotation;
         public int collisionWidth;
         public int collisionHeight;
 
@@ -78,7 +79,7 @@ namespace bullethell.classes
                 basetex.SetData(new[] { color });
             }
 
-            SB.Draw(basetex, position, hitbox, Color.White, 0, new Vector2(0,0), 1f, SpriteEffects.None, 0);
+            SB.Draw(basetex, position, hitbox, Color.White, rotation, new Vector2(0,0), 1f, SpriteEffects.None, 0);
 
             SB.End();
         }

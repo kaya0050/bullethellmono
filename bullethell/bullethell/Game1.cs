@@ -3,6 +3,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using System.Reflection;
+
 
 namespace bullethell
 {
@@ -20,9 +22,11 @@ namespace bullethell
             _graphics = new GraphicsDeviceManager(this);
             _graphics.PreferredBackBufferHeight = 540;
             _graphics.PreferredBackBufferWidth = 720;
+
             
+
             Content.RootDirectory = "Content";
-            IsMouseVisible = false;
+            IsMouseVisible = true;
         }
 
         protected override void Initialize()
@@ -38,9 +42,13 @@ namespace bullethell
 
             //collider initialize
             testcollider = new collisionobjects();
-            testcollider.position = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
-            testcollider.collisionWidth = 64;
+            testcollider.collisionWidth = 128;
             testcollider.collisionHeight = 32;
+            testcollider.position = new Vector2(
+                _graphics.PreferredBackBufferWidth / 2 - testcollider.collisionWidth / 2,
+                _graphics.PreferredBackBufferHeight / 2 - testcollider.collisionHeight / 2
+            );
+
             testcollider.entities.Add(box);
 
             box.collider.entities.Add(box);
@@ -59,7 +67,7 @@ namespace bullethell
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             {
                 
-                _graphics.ToggleFullScreen();
+                Exit();
 
             }
                 
@@ -72,7 +80,7 @@ namespace bullethell
         }
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.DarkTurquoise);
+            GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
             box.drawEntity(_spriteBatch, GraphicsDevice);
