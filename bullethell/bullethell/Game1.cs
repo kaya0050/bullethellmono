@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
-using System.Reflection;
+
 
 
 namespace bullethell
@@ -16,6 +16,7 @@ namespace bullethell
         entity box;
         Vector2 boxpos;
 
+        player player1;
         collisionobjects testcollider;
         public Game1()
         {
@@ -33,12 +34,19 @@ namespace bullethell
         {
             // TODO: Add your initialization logic here
             //box initialize
-            
-            box = new entity();
+            player1 = new player();
+            player1.name = "player1";
+            player1.tag = "player";
+            player1.id = 1;
+            player1.position = new Vector2(_graphics.PreferredBackBufferWidth / 4, _graphics.PreferredBackBufferHeight / 4);
+
+
+            /*box = new entity();
             box.tag = "debugItem";
             box.id = 0;
             box.name = "box";
             box.position = new Vector2(_graphics.PreferredBackBufferWidth / 4, _graphics.PreferredBackBufferHeight / 4);
+            */
 
             //collider initialize
             testcollider = new collisionobjects();
@@ -49,9 +57,10 @@ namespace bullethell
                 _graphics.PreferredBackBufferHeight / 2 - testcollider.collisionHeight / 2
             );
 
-            testcollider.entities.Add(box);
+            //testcollider.entities.Add(player1);
+            testcollider.players.Add(player1);
 
-            box.collider.entities.Add(box);
+            //box.collider.entities.Add(box);
             base.Initialize();
         }
 
@@ -70,20 +79,22 @@ namespace bullethell
                 Exit();
 
             }
-                
+            
             
             Console.WriteLine(gameTime.TotalGameTime.TotalSeconds);
             
             testcollider.UpdateCollisionObjects();
-            box.entityUpdate(gameTime, _graphics);
+            player1.playerUpdate(gameTime, _graphics);
+
+
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
 
-            // TODO: Add your drawing code here
-            box.drawEntity(_spriteBatch, GraphicsDevice);
+            
+            player1.playerDraw(_spriteBatch, GraphicsDevice);
             testcollider.drawCollider(_spriteBatch, GraphicsDevice);
             base.Draw(gameTime);
             

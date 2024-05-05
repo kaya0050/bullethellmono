@@ -15,18 +15,14 @@ namespace bullethell.classes
         public string tag;
         public string name;
         public Texture2D basetex;
-        Color color = Color.White;
+        public Color color = Color.White;
 
 
         public Vector2 position;
         public float rotation;
         public int width = 32;
         public int height = 32;
-        #region debug variables
 
-        double V;
-        int speed = 200;
-        #endregion
         public collisionobjects collider = new collisionobjects();
         public entity()
         {
@@ -44,77 +40,7 @@ namespace bullethell.classes
         
         public void entityUpdate(GameTime GT, GraphicsDeviceManager graphics)
         {
-            #region debug
-            MouseState mouse = Mouse.GetState();
-            //var distance = new Vector2(mouse.X - position.X, mouse.Y - position.Y);
-            //rotation = (float)Math.Atan2(distance.Y, distance.X);
-            //rotation += 1 * (float)GT.ElapsedGameTime.TotalSeconds;
             
-
-            // center collider
-            collider.position = new Vector2(position.X - 16,position.Y - 16);
-            
-            var keystateplayer = Keyboard.GetState();
-            
-            if (keystateplayer.IsKeyDown(Keys.A))
-            {
-                if (hitbox.Left > 0)
-                {
-                    float pp = MathF.Sin((((float)GT.TotalGameTime.TotalSeconds * 20)));
-                    //rotation = pp / 5;
-                    //rotation = 179 + pp / 10;
-                    
-                    position.X -= speed * (float)GT.ElapsedGameTime.TotalSeconds;
-                    collider.position.X -= speed * (float)GT.ElapsedGameTime.TotalSeconds;
-
-                }
-            }
-            if (keystateplayer.IsKeyDown(Keys.D))
-            {
-                if (hitbox.Right <= graphics.PreferredBackBufferWidth)
-                {
-                    float pp = MathF.Sin((((float)GT.TotalGameTime.TotalSeconds * 20)));
-                    //rotation = pp / 5;
-                    //rotation = -179 + pp / 10;
-                    
-                    position.X += speed * (float)GT.ElapsedGameTime.TotalSeconds;
-                    collider.position.X += speed * (float)GT.ElapsedGameTime.TotalSeconds;
-                }
-                
-            }
-            if (keystateplayer.IsKeyDown(Keys.W))
-            {
-                if (hitbox.Top > 0)
-                {
-                    
-                    position.Y -= speed * (float)GT.ElapsedGameTime.TotalSeconds;
-                    collider.position.Y -= speed * (float)GT.ElapsedGameTime.TotalSeconds;
-                }
-                
-            }
-            
-            if (keystateplayer.IsKeyDown(Keys.S))
-            {
-                if (hitbox.Bottom < graphics.PreferredBackBufferHeight)
-                {
-                    
-                    position.Y += speed * (float)GT.ElapsedGameTime.TotalSeconds;
-                    collider.position.Y += speed * (float)GT.ElapsedGameTime.TotalSeconds;
-                }
-            }
-            //if (hitbox.Bottom <= graphics.PreferredBackBufferHeight + 32)
-            //{
-            //    position.Y += 500 * (float)GT.ElapsedGameTime.TotalSeconds;
-            //}
-
-
-            
-
-
-
-
-
-            #endregion
         }
         public void drawEntity(SpriteBatch SB,GraphicsDevice GD)
         {

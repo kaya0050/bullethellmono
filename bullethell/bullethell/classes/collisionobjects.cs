@@ -12,6 +12,7 @@ namespace bullethell.classes
     internal class collisionobjects
     {
         public List<entity> entities;
+        public List<player> players;
         public Vector2 position;
         public float rotation;
         public int collisionWidth;
@@ -25,6 +26,7 @@ namespace bullethell.classes
         public collisionobjects()
         {
             entities = new List<entity>();
+            players = new List<player>();
             
             
         }
@@ -62,6 +64,31 @@ namespace bullethell.classes
                             basetex.SetData(new[] { color });
                         
                         entitypos = entity.position;
+                    }
+
+                }
+            }
+
+            if (players != null)
+            {
+                foreach (player player in players)
+                {
+
+                    if (player.collider.hitbox.Intersects(hitbox))
+                    {
+                        if (basetex != null)
+                            basetex.SetData(new[] { Color.Red });
+
+                        Console.WriteLine("hit");
+
+                        player.position = entitypos;
+                    }
+                    else
+                    {
+                        if (basetex != null)
+                            basetex.SetData(new[] { color });
+
+                        entitypos = player.position;
                     }
 
                 }
