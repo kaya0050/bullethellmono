@@ -19,7 +19,7 @@ namespace bullethell.classes
                 case state.start:
                     //startmenu
 
-                    break; 
+                    break;
 
 
                 case state.play:
