@@ -11,9 +11,6 @@ namespace bullethell.classes
 {
     internal class player : entity
     {
-
-        
-
         public Vector2 position;
         public float rotation;
         public int speed = 200;
@@ -53,8 +50,7 @@ namespace bullethell.classes
                 if (hitbox.Left > 0)
                 {
                     float pp = MathF.Sin((((float)GT.TotalGameTime.TotalSeconds * 20)));
-                    //rotation = pp / 5;
-                    //rotation = 179 + pp / 10;
+                    
 
                     position.X -= speed * (float)GT.ElapsedGameTime.TotalSeconds;
                     collider.position.X -= speed * (float)GT.ElapsedGameTime.TotalSeconds;
@@ -66,9 +62,7 @@ namespace bullethell.classes
                 if (hitbox.Right <= graphics.PreferredBackBufferWidth)
                 {
                     float pp = MathF.Sin((((float)GT.TotalGameTime.TotalSeconds * 20)));
-                    //rotation = pp / 5;
-                    //rotation = -179 + pp / 10;
-
+                    
                     position.X += speed * (float)GT.ElapsedGameTime.TotalSeconds;
                     collider.position.X += speed * (float)GT.ElapsedGameTime.TotalSeconds;
                 }
@@ -98,8 +92,7 @@ namespace bullethell.classes
             //{
             //    position.Y += 500 * (float)GT.ElapsedGameTime.TotalSeconds;
             //}
-
-
+           
 
 
 
@@ -114,14 +107,15 @@ namespace bullethell.classes
             collider.drawCollider(SB, GD);
             SB.Begin();
 
-
+           
+            
             // creates single pixel texture
             if (basetex == null)
             {
                 basetex = new Texture2D(GD, 1, 1);
                 basetex.SetData(new[] { color });
             }
-
+            
             SB.Draw(basetex, position, hitbox, Color.Multiply(Color.White, 1f), rotation, new Vector2(0, 0), 1f, SpriteEffects.None, 1);
 
             SB.End();

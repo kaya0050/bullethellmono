@@ -72,3 +72,4 @@ C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bulleth
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\bullethell.pdb
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\bullethell.genruntimeconfig.cache
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\ref\bullethell.dll
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Debug\net6.0-windows\Content\fonts\font.xnb

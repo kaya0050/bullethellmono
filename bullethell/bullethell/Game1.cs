@@ -13,11 +13,13 @@ namespace bullethell
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private GraphicsDevice device;
-        entity box;
-        Vector2 boxpos;
+        
+        
 
         player player1;
         collisionobjects testcollider;
+
+        private SpriteFont font;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -35,7 +37,7 @@ namespace bullethell
             // TODO: Add your initialization logic here
             //box initialize
             player1 = new player();
-            player1.name = "player1";
+            player1.name = "sjonnie";
             player1.tag = "player";
             player1.id = 1;
             player1.position = new Vector2(_graphics.PreferredBackBufferWidth / 4, _graphics.PreferredBackBufferHeight / 4);
@@ -67,7 +69,7 @@ namespace bullethell
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            
+            font = Content.Load<SpriteFont>("fonts/font");
             // TODO: use this.Content to load your game content here
         }
 
@@ -92,10 +94,13 @@ namespace bullethell
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
+           
 
-            
             player1.playerDraw(_spriteBatch, GraphicsDevice);
             testcollider.drawCollider(_spriteBatch, GraphicsDevice);
+            _spriteBatch.Begin();
+            _spriteBatch.DrawString(font, player1.name + "\n" + ((int)gameTime.TotalGameTime.TotalSeconds), new Vector2(20, 20), Color.Red);
+            _spriteBatch.End();
             base.Draw(gameTime);
             
         }
