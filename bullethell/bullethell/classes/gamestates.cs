@@ -11,6 +11,7 @@ namespace bullethell.classes
         public enum state { start,play,load,gameover }
         public state gamestate { get; set; }
 
+
         public void UpdateState()
         {
             switch (gamestate)

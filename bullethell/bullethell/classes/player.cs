@@ -35,10 +35,6 @@ namespace bullethell.classes
         {
             #region debug
             MouseState mouse = Mouse.GetState();
-            //var distance = new Vector2(mouse.X - position.X, mouse.Y - position.Y);
-            //rotation = (float)Math.Atan2(distance.Y, distance.X);
-            //rotation += 1 * (float)GT.ElapsedGameTime.TotalSeconds;
-
 
             // center collider
             collider.position = new Vector2(position.X - 16, position.Y - 16);
@@ -88,16 +84,6 @@ namespace bullethell.classes
                     collider.position.Y += speed * (float)GT.ElapsedGameTime.TotalSeconds;
                 }
             }
-            //if (hitbox.Bottom <= graphics.PreferredBackBufferHeight + 32)
-            //{
-            //    position.Y += 500 * (float)GT.ElapsedGameTime.TotalSeconds;
-            //}
-           
-
-
-
-
-
 
             #endregion
         }
