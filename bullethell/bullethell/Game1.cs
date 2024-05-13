@@ -3,8 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
-
-
+using System.Collections.Generic;
 
 namespace bullethell
 {
@@ -13,8 +12,8 @@ namespace bullethell
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private GraphicsDevice device;
-        
-        
+
+        List<entity> gameobjects; 
 
         player player1;
         collisionobjects testcollider;
@@ -37,20 +36,13 @@ namespace bullethell
             // TODO: Add your initialization logic here
             //box initialize
             player1 = new player();
-            player1.name = "sjonnie";
+            player1.name = "Player name";
             player1.tag = "player";
             player1.id = 1;
             player1.position = new Vector2(_graphics.PreferredBackBufferWidth / 4, _graphics.PreferredBackBufferHeight / 4);
 
 
-            /*box = new entity();
-            box.tag = "debugItem";
-            box.id = 0;
-            box.name = "box";
-            box.position = new Vector2(_graphics.PreferredBackBufferWidth / 4, _graphics.PreferredBackBufferHeight / 4);
-            */
-
-            //collider initialize
+            
             testcollider = new collisionobjects();
             testcollider.collisionWidth = 128;
             testcollider.collisionHeight = 32;
@@ -59,10 +51,19 @@ namespace bullethell
                 _graphics.PreferredBackBufferHeight / 2 - testcollider.collisionHeight / 2
             );
 
-            //testcollider.entities.Add(player1);
-            testcollider.players.Add(player1);
+            
+            
+            //sort objects
+            gameobjects = new List<entity>();
+            gameobjects.Add(player1);
+            foreach (entity entity in gameobjects)
+            {
+                if (entity.tag == "player")
+                {
+                    testcollider.entities.Add(entity);
+                }
+            }
 
-            //box.collider.entities.Add(box);
             base.Initialize();
         }
 
@@ -70,7 +71,7 @@ namespace bullethell
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("fonts/font");
-            // TODO: use this.Content to load your game content here
+            
         }
 
         protected override void Update(GameTime gameTime)
