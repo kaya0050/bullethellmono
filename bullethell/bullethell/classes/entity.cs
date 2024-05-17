@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace bullethell.classes
     {
         public int id;
         public string tag;
+        public List<string> tags;
+        
         public string name;
         public Texture2D basetex;
         public Color color = Color.White;

@@ -35,9 +35,8 @@ namespace bullethell.classes
         {
             #region debug
             MouseState mouse = Mouse.GetState();
-            //var distance = new Vector2(mouse.X - position.X, mouse.Y - position.Y);
-            //rotation = (float)Math.Atan2(distance.Y, distance.X);
-            //rotation += 1 * (float)GT.ElapsedGameTime.TotalSeconds;
+            //var distanceToMouse = new Vector2(mouse.X - position.X, mouse.Y - position.Y);
+            
 
 
             // center collider

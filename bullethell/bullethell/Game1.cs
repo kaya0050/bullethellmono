@@ -33,37 +33,59 @@ namespace bullethell
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-            //box initialize
+            
             player1 = new player();
             player1.name = "Player name";
-            player1.tag = "player";
+            
+            player1.tags = new List<string>();
+            //player1.tags.Add("player");
+            player1.tags.Add("collision");
+            
+
             player1.id = 1;
             player1.position = new Vector2(_graphics.PreferredBackBufferWidth / 4, _graphics.PreferredBackBufferHeight / 4);
 
-
+            
             
             testcollider = new collisionobjects();
-            testcollider.collisionWidth = 128;
-            testcollider.collisionHeight = 32;
+            testcollider.collisionWidth = 420;
+            testcollider.collisionHeight = 69;
             testcollider.position = new Vector2(
                 _graphics.PreferredBackBufferWidth / 2 - testcollider.collisionWidth / 2,
                 _graphics.PreferredBackBufferHeight / 2 - testcollider.collisionHeight / 2
             );
 
-            
-            
-            //sort objects
+
+            #region sorting gameObjects
             gameobjects = new List<entity>();
+
             gameobjects.Add(player1);
-            foreach (entity entity in gameobjects)
+
+            foreach (player player in gameobjects)
             {
-                if (entity.tag == "player")
+                if (player.tags.Contains("player"))
                 {
-                    testcollider.entities.Add(entity);
+                    testcollider.players.Add(player);
                 }
             }
+            foreach (entity entity in gameobjects)
+            {
+                if (!(entity is player))
+                {
+                    if (entity.tags.Contains("collision"))
+                    {
+                        testcollider.entities.Add(entity);
+                    }
+                }
+                
+                if(entity is player player && entity.tags.Contains("collision"))
+                {
+                    testcollider.players.Add(player);
+                }
 
+            }
+
+            #endregion
             base.Initialize();
         }
 
@@ -94,7 +116,7 @@ namespace bullethell
         }
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+            GraphicsDevice.Clear(Color.Blue);
            
 
             player1.playerDraw(_spriteBatch, GraphicsDevice);
