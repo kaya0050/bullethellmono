@@ -9,15 +9,26 @@ using System.Threading.Tasks;
 
 namespace bullethell.classes
 {
-    internal class player : entity
+    public class player : entity
     {
+
+
+        public int lives = 3;
+        public List<item> Inventory = new List<item>();
+
+
+
         public Vector2 position;
-        public float rotation;
+        public float rotation = -1.57f;
         public int speed = 200;
         public int width = 32;
         public int height = 32;
 
         public collisionobjects collider = new collisionobjects();
+
+        public List<bullet> playerbullets = new List<bullet>();
+
+        public int timer = 0;
 
         public player()
         {
@@ -36,8 +47,8 @@ namespace bullethell.classes
             #region debug
             MouseState mouse = Mouse.GetState();
             //var distanceToMouse = new Vector2(mouse.X - position.X, mouse.Y - position.Y);
-            
 
+            timer--;
 
             // center collider
             collider.position = new Vector2(position.X - 16, position.Y - 16);
@@ -91,10 +102,18 @@ namespace bullethell.classes
             //{
             //    position.Y += 500 * (float)GT.ElapsedGameTime.TotalSeconds;
             //}
-           
 
 
-
+            if (mouse.LeftButton == ButtonState.Pressed && timer <= 0)
+            {
+                var bullet1 = new bullet(new Vector2 (position.X + 29,position.Y + -32), rotation);
+                playerbullets.Add(bullet1);
+                timer = 10;
+            }
+            foreach (var bullet in playerbullets)
+            {
+                bullet.Update(GT);
+            }
 
 
 
@@ -106,7 +125,10 @@ namespace bullethell.classes
             collider.drawCollider(SB, GD);
             SB.Begin();
 
-           
+            foreach (var bullet in playerbullets)
+            {
+                bullet.draw(SB, GD);
+            }
             
             // creates single pixel texture
             if (basetex == null)
@@ -115,7 +137,7 @@ namespace bullethell.classes
                 basetex.SetData(new[] { color });
             }
             
-            SB.Draw(basetex, position, hitbox, Color.Multiply(Color.White, 1f), rotation, new Vector2(0, 0), 1f, SpriteEffects.None, 1);
+            SB.Draw(basetex, position, hitbox, Color.Multiply(Color.White, 1f), 0, new Vector2(0, 0), 1f, SpriteEffects.None, 1);
 
             SB.End();
         }

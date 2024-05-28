@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace bullethell.classes
 {
-    internal class entity
+    public class entity
     {
         public int id;
         public string tag;
@@ -41,11 +41,11 @@ namespace bullethell.classes
             }
         }
         
-        public void entityUpdate(GameTime GT, GraphicsDeviceManager graphics)
+        public virtual void entityUpdate(GameTime GT, GraphicsDeviceManager graphics)
         {
             
         }
-        public void drawEntity(SpriteBatch SB,GraphicsDevice GD)
+        public virtual void drawEntity(SpriteBatch SB,GraphicsDevice GD)
         {
             collider.color = Color.DarkGray;
             collider.drawCollider(SB, GD);

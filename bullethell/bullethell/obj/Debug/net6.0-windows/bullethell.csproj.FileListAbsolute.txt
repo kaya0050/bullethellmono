@@ -66,10 +66,11 @@ C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bulleth
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\bullethell.AssemblyInfoInputs.cache
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\bullethell.AssemblyInfo.cs
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\bullethell.csproj.CoreCompileInputs.cache
-C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\bullethell.csproj.CopyComplete
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\bullethell.dll
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\refint\bullethell.dll
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\bullethell.pdb
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\bullethell.genruntimeconfig.cache
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\ref\bullethell.dll
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Debug\net6.0-windows\Content\fonts\font.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\bullethell.sourcelink.json
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\bullethell.csproj.Up2Date

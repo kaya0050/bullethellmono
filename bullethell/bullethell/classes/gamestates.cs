@@ -1,4 +1,6 @@
-﻿using System;
+﻿using bullethell.gamestateclasses;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace bullethell.classes
 {
-    internal class gamestates
+    public static class gamestates
     {
+        
         public enum state { start,play,load,gameover }
-        public state gamestate { get; set; }
-
-        public void UpdateState()
+        public static state gamestate { get; set; }
+        
+        public static void UpdateState(GameTime gameTime,Game1 game1,weGamin weGamin)
         {
             switch (gamestate)
             {
@@ -23,7 +26,8 @@ namespace bullethell.classes
 
                 case state.play:
                     //main game loop
-
+                    weGamin.webegamin = true;
+                    weGamin.Update(gameTime,game1);
                     break;
 
 

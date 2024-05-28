@@ -15,6 +15,7 @@ namespace bullethell.classes
         public Keys Horizontal_Positive = Keys.W;
         public Keys Horizontal_Negative = Keys.S;
 
+
         public float Horizontal;
         public Keys Vertical_Positive = Keys.D;
         public Keys Vertical_Negative = Keys.A;

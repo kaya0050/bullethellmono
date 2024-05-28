@@ -1,4 +1,5 @@
 ﻿using bullethell.classes;
+using bullethell.gamestateclasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -9,14 +10,19 @@ namespace bullethell
 {
     public class Game1 : Game
     {
-        private GraphicsDeviceManager _graphics;
+        public GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private GraphicsDevice device;
 
         List<entity> gameobjects; 
 
-        player player1;
-        collisionobjects testcollider;
+        //make public or else no Update???
+        public player player1;
+        public collisionobjects testcollider;
+
+        public weGamin weGamin;
+        
+
 
         private SpriteFont font;
         public Game1()
@@ -30,10 +36,16 @@ namespace bullethell
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
-
+        
         protected override void Initialize()
         {
-            
+            //gamestates
+            weGamin = new weGamin();
+            //gamestates = new gamestates();
+            gamestates.gamestate = gamestates.state.play;
+
+
+
             player1 = new player();
             player1.name = "Player name";
             
@@ -61,13 +73,7 @@ namespace bullethell
 
             gameobjects.Add(player1);
 
-            foreach (player player in gameobjects)
-            {
-                if (player.tags.Contains("player"))
-                {
-                    testcollider.players.Add(player);
-                }
-            }
+            
             foreach (entity entity in gameobjects)
             {
                 if (!(entity is player))
@@ -82,7 +88,6 @@ namespace bullethell
                 {
                     testcollider.players.Add(player);
                 }
-
             }
 
             #endregion
@@ -99,24 +104,23 @@ namespace bullethell
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-            {
-                
+            { 
                 Exit();
-
             }
-            
-            
-            Console.WriteLine(gameTime.TotalGameTime.TotalSeconds);
-            
-            testcollider.UpdateCollisionObjects();
-            player1.playerUpdate(gameTime, _graphics);
+
+            Console.WriteLine(testcollider.entities.Count);
+            gamestates.UpdateState(gameTime, this, weGamin);
+
+            //weGamin.Update(gameTime,this);
 
 
+
+            Console.Clear();
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Blue);
+            GraphicsDevice.Clear(Color.Black);
            
 
             player1.playerDraw(_spriteBatch, GraphicsDevice);

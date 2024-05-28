@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace bullethell.classes
 {
-    internal class collisionobjects
+    public class collisionobjects
     {
         public List<entity> entities;
         public List<player> players;
@@ -48,7 +48,6 @@ namespace bullethell.classes
             {
                 foreach (entity entity in entities)
                 {
-                   
                     if (entity.collider.hitbox.Intersects(hitbox))
                     {
                         if (basetex != null)
@@ -65,7 +64,6 @@ namespace bullethell.classes
                         
                         entitypos = entity.position;
                     }
-
                 }
             }
 
