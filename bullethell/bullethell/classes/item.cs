@@ -8,6 +8,21 @@ namespace bullethell.classes
 {
     public class item
     {
+        struct healitem
+        {
+            public int id;
+            public int hp;
+            public string name;
+        }
+        struct combatitem
+        {
+            public int id;
+            public int dmg;
+            public string name;
+            public void func()
+            {
 
+            }
+        }
     }
 }

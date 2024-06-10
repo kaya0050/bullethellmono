@@ -1,10 +1,12 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Microsoft.Win32.SafeHandles;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +14,8 @@ namespace bullethell.classes
 {
     public class entity
     {
+        
+
         public int id;
         public string tag;
         public List<string> tags;
@@ -40,7 +44,7 @@ namespace bullethell.classes
                 return new Rectangle((int)position.X, (int)position.Y, width, height);
             }
         }
-        
+       
         public virtual void entityUpdate(GameTime GT, GraphicsDeviceManager graphics)
         {
             

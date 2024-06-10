@@ -42,8 +42,11 @@ namespace bullethell.classes
             }
         }
 
-        public void UpdateCollisionObjects()
+        public virtual void UpdateCollisionObjects()
         {
+
+
+
             if (entities != null)
             {
                 foreach (entity entity in entities)

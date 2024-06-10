@@ -21,16 +21,19 @@ namespace bullethell
         public collisionobjects testcollider;
 
         public weGamin weGamin;
-        
+
 
 
         private SpriteFont font;
+
+        public enemySpawner enemySpawner;
+        new Vector2 spawnpointlocation;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             _graphics.PreferredBackBufferHeight = 540;
             _graphics.PreferredBackBufferWidth = 720;
-
+            Window.IsBorderless = true;
             
 
             Content.RootDirectory = "Content";
@@ -47,17 +50,27 @@ namespace bullethell
 
 
             player1 = new player();
-            player1.name = "Player name";
+            player1.name = "Timmy";
             
             player1.tags = new List<string>();
             //player1.tags.Add("player");
             player1.tags.Add("collision");
             
-
+               
             player1.id = 1;
-            player1.position = new Vector2(_graphics.PreferredBackBufferWidth / 4, _graphics.PreferredBackBufferHeight / 4);
+            player1.position = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
 
+            //enemys
+            spawnpointlocation = new Vector2(_graphics.PreferredBackBufferWidth / 2, -10);
             
+            
+            
+            //enemyspawner
+            var enemyli = new List<enemy>();
+            
+            enemySpawner = new enemySpawner(enemyli,player1,spawnpointlocation);
+            
+
             
             testcollider = new collisionobjects();
             testcollider.collisionWidth = 420;
@@ -66,6 +79,7 @@ namespace bullethell
                 _graphics.PreferredBackBufferWidth / 2 - testcollider.collisionWidth / 2,
                 _graphics.PreferredBackBufferHeight / 2 - testcollider.collisionHeight / 2
             );
+            
 
 
             #region sorting gameObjects
@@ -93,7 +107,7 @@ namespace bullethell
             #endregion
             base.Initialize();
         }
-
+          
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -107,13 +121,11 @@ namespace bullethell
             { 
                 Exit();
             }
-
+            
             Console.WriteLine(testcollider.entities.Count);
             gamestates.UpdateState(gameTime, this, weGamin);
 
             //weGamin.Update(gameTime,this);
-
-
 
             Console.Clear();
             base.Update(gameTime);
@@ -121,12 +133,12 @@ namespace bullethell
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-           
-
+            enemySpawner.Draw(_spriteBatch,GraphicsDevice);
             player1.playerDraw(_spriteBatch, GraphicsDevice);
-            testcollider.drawCollider(_spriteBatch, GraphicsDevice);
+            
+            
             _spriteBatch.Begin();
-            _spriteBatch.DrawString(font, player1.name + "\n" + ((int)gameTime.TotalGameTime.TotalSeconds), new Vector2(20, 20), Color.Red);
+            _spriteBatch.DrawString(font,"lives:"+ player1.lives +"\n"+ "points:" + player1.points, new Vector2(20, 20), Color.Blue);
             _spriteBatch.End();
             base.Draw(gameTime);
             

@@ -12,19 +12,24 @@ namespace bullethell.gamestateclasses
     {
         public bool webegamin = false;
         public Game1 Game1;
-        public void Update(GameTime gameTime,Game1 game1)
+        public void Update(GameTime GT,Game1 game1)
         {
             if (webegamin)
             {
 
                 //Console.WriteLine(gameTime.TotalGameTime.TotalSeconds);
 
-                game1.testcollider.UpdateCollisionObjects();
-                game1.player1.playerUpdate(gameTime, game1._graphics);
+                //game1.testcollider.UpdateCollisionObjects();
+                game1.player1.playerUpdate(GT, game1._graphics);
+                game1.enemySpawner.Update(GT);
 
 
 
             }
+        }
+        public void Draw()
+        {
+
         }
     }
 }
