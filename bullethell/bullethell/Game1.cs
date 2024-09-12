@@ -128,12 +128,12 @@ namespace bullethell
             }
             
             
-            Console.WriteLine(testcollider.entities.Count);
+            
             gamestates.UpdateState(gameTime, this, weGamin);
 
             //weGamin.Update(gameTime,this);
 
-            Console.Clear();
+           
             base.Update(gameTime);
         }
         

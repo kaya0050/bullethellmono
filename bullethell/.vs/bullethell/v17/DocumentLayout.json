@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|c:\\users\\kayab\\onedrive\\desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|solutionrelative:bullethell\\classes\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|c:\\users\\kayab\\onedrive\\desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|solutionrelative:bullethell\\classes\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,6 +13,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|c:\\users\\kayab\\onedrive\\desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|solutionrelative:bullethell\\classes\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|c:\\users\\kayab\\onedrive\\desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|solutionrelative:bullethell\\classes\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|c:\\users\\kayab\\onedrive\\desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,28 +46,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "enemy.cs",
               "DocumentMoniker": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\enemy.cs",
               "RelativeDocumentMoniker": "bullethell\\classes\\enemy.cs",
               "ToolTip": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\enemy.cs",
               "RelativeToolTip": "bullethell\\classes\\enemy.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAADwvyQAAAAjAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACcAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-29T09:07:33.439Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Game1.cs",
               "DocumentMoniker": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\Game1.cs",
               "RelativeDocumentMoniker": "bullethell\\Game1.cs",
               "ToolTip": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\Game1.cs",
               "RelativeToolTip": "bullethell\\Game1.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAkwHUAAAA6AAAA",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAowHIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T07:38:23.298Z"
+              "WhenOpened": "2024-06-10T07:38:23.298Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -83,15 +84,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "bullet.cs",
               "DocumentMoniker": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\bullet.cs",
               "RelativeDocumentMoniker": "bullethell\\classes\\bullet.cs",
               "ToolTip": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\bullet.cs",
               "RelativeToolTip": "bullethell\\classes\\bullet.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAfAAAA",
+              "ViewState": "AQIAAGEAAAAAAAAAAAAcwBYAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T07:04:19.079Z"
+              "WhenOpened": "2024-06-03T07:04:19.079Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -107,13 +109,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "enemySpawner.cs",
               "DocumentMoniker": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\enemySpawner.cs",
               "RelativeDocumentMoniker": "bullethell\\classes\\enemySpawner.cs",
               "ToolTip": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\enemySpawner.cs",
               "RelativeToolTip": "bullethell\\classes\\enemySpawner.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABMAAAAaAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAowC4AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-29T13:05:52.866Z",
               "EditorCaption": ""

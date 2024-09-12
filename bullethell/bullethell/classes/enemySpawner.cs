@@ -40,12 +40,21 @@ namespace bullethell.classes
         bool right = false;
         public void Update(GameTime GT)
         {
-            foreach(var enemy in enemies)
+            Console.WriteLine(enemies.Count);
+            foreach (var enemy in enemies)
             {
                 if (!enemy.alive)
                 {
-                    
-                    
+                    List<enemy> newenemies = new List<enemy>();
+                    for (int i = 0; i < enemies.Count; i++)
+                    {
+                        if (enemies.ToArray<enemy>()[i].alive)
+                        {
+                            newenemies.Add(enemies.ToArray<enemy>()[i]);
+                            
+                        }
+                    }
+                    enemies = newenemies;
                 }
                 else
                 {
