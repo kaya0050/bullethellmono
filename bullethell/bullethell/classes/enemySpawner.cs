@@ -17,7 +17,7 @@ namespace bullethell.classes
 
         public int timer = 0;
 
-        int extrapos = 0;
+        int extrapos = 200;
         public enemySpawner(List<enemy> enemiestospawn, player player,Vector2 spawnpoint)
         {
             enemies = enemiestospawn;
@@ -33,42 +33,43 @@ namespace bullethell.classes
             
             foreach (var enemy in enemies)
             {
-                enemy.Update(GT);
+                
                 
             }
         }
         bool right = false;
         public void Update(GameTime GT)
         {
+            foreach(var enemy in enemies)
+            {
+                if (!enemy.alive)
+                {
+                    
+                    
+                }
+                else
+                {
+                    enemy.Update(GT);
+                }
+            }
+
             timer--;
             if (timer <= 0)
             {
-                if (extrapos >720 )
-                {
-                    right = false;
-                }
-                if (extrapos < 0)
-                {
-                    right = true;
-                }
-                if (!right)
-                {
-
-                    extrapos -= 64;
-                }
-                if (right)
-                {
-                    extrapos += 64;
-                }
+                
                 
                 enemy enemysp = new enemy(player1);
                 enemysp.position = new Vector2(extrapos,0);
 
-                enemysp.Colormultiplyer = extrapos;
+                
+
+                // make player colide with enemy
                 //enemysp.collider.players.Add(player1);
+
+
                 enemies.Add(enemysp);
                 
-                timer = 10;
+                timer = 50;
             }
             
             spawn(GT);

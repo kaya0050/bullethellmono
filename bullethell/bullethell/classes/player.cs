@@ -35,6 +35,7 @@ namespace bullethell.classes
         public int timer = 0;
         public int timerdowntime = 10;
 
+        public Texture2D textureforbullet;
         public player()
         {
             collider.collisionWidth = 64;
@@ -131,7 +132,7 @@ namespace bullethell.classes
         {
             if (alive)
             {
-                collider.color = Color.DarkGray;
+                collider.color = Color.White;
                 collider.drawCollider(SB, GD);
                 foreach (var bullet in playerbullets)
                 {
@@ -170,16 +171,16 @@ namespace bullethell.classes
             
             if (points >= 100)
             {
-                var bullet2 = new bullet(new Vector2(position.X + 48, position.Y + -32), rotation + 0.2f);
+                var bullet2 = new bullet(new Vector2(position.X + 48, position.Y + -32), rotation + 0.1f,textureforbullet);
                 bullet2.color = Color.Green;
-                var bullet3 = new bullet(new Vector2(position.X + -16, position.Y + -32), rotation + -0.2f);
+                var bullet3 = new bullet(new Vector2(position.X + -16, position.Y + -32), rotation + -0.1f,textureforbullet);
                 bullet3.color = Color.Red;
                 playerbullets.Add(bullet2);
                 playerbullets.Add(bullet3);
 
                 timerdowntime = 10;
             }
-            var bullet1 = new bullet(new Vector2(position.X + 16, position.Y + -32), rotation);
+            var bullet1 = new bullet(new Vector2(position.X + 16, position.Y + -32), rotation,textureforbullet);
             bullet1.color = Color.Gold;
             playerbullets.Add(bullet1);
             

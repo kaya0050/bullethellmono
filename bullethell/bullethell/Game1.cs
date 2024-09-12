@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 
+
 namespace bullethell
 {
     public class Game1 : Game
@@ -22,7 +23,9 @@ namespace bullethell
 
         public weGamin weGamin;
 
+        public Texture2D bulletsprite;
 
+        
 
         private SpriteFont font;
 
@@ -33,8 +36,8 @@ namespace bullethell
             _graphics = new GraphicsDeviceManager(this);
             _graphics.PreferredBackBufferHeight = 540;
             _graphics.PreferredBackBufferWidth = 720;
-            Window.IsBorderless = true;
-            
+            Window.IsBorderless = false;
+
 
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
@@ -47,8 +50,8 @@ namespace bullethell
             //gamestates = new gamestates();
             gamestates.gamestate = gamestates.state.play;
 
-
-
+            
+            
             player1 = new player();
             player1.name = "Timmy";
             
@@ -112,15 +115,18 @@ namespace bullethell
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("fonts/font");
-            
+            bulletsprite = Content.Load<Texture2D>("ufo");
+            player1.textureforbullet = bulletsprite;
         }
 
         protected override void Update(GameTime gameTime)
         {
+            
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             { 
                 Exit();
             }
+            
             
             Console.WriteLine(testcollider.entities.Count);
             gamestates.UpdateState(gameTime, this, weGamin);
@@ -130,14 +136,19 @@ namespace bullethell
             Console.Clear();
             base.Update(gameTime);
         }
+        
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
             enemySpawner.Draw(_spriteBatch,GraphicsDevice);
             player1.playerDraw(_spriteBatch, GraphicsDevice);
+
             
-            
+
+
             _spriteBatch.Begin();
+            
+            
             _spriteBatch.DrawString(font,"lives:"+ player1.lives +"\n"+ "points:" + player1.points, new Vector2(20, 20), Color.Blue);
             _spriteBatch.End();
             base.Draw(gameTime);

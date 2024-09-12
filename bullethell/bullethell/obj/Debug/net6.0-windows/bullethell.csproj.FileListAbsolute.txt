@@ -74,3 +74,9 @@ C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bulleth
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Debug\net6.0-windows\Content\fonts\font.xnb
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\bullethell.sourcelink.json
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0-windows\bullethell.csproj.Up2Date
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Debug\net6.0-windows\Content\cross.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Debug\net6.0-windows\Content\heart1.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Debug\net6.0-windows\Content\heart2.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Debug\net6.0-windows\Content\heart3.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Debug\net6.0-windows\Content\heart4.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Debug\net6.0-windows\Content\ufo.xnb

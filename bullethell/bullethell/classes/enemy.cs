@@ -75,7 +75,7 @@ namespace bullethell.classes
 
                 if (bullettime < 0)
                 {
-                    bullet1 = new bullet(position, 1.57f);
+                    bullet1 = new bullet(position + new Vector2(21,16), 1.57f);
                     bullet1.speed = 2;
                     bullet1.color = Color.Red;
                     bullets.Add(bullet1);
@@ -118,7 +118,7 @@ namespace bullethell.classes
                 }
                 collider.drawCollider(SB, GD);
                 SB.Begin();
-                var c = new Color(Colormultiplyer, 0, 0);
+                var c = new Color(100, 0, 0);
 
                 // creates single pixel texture
                 if (basetex == null)
