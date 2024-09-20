@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace bullethell.classes
@@ -20,17 +19,20 @@ namespace bullethell.classes
         public bool alive = true;
         public int dmg;
 
-        public int timer = 100;
+        public int timer = 300;
         public float speed = 5;
 
         public Vector2 position;
         public Vector2 velocity;
         public float direction;
 
+        float rot;
+
+
         public Texture2D bullettex;
         public Color color;
 
-        //public collisionobjects collider = new collisionobjects();
+      
 
         public Rectangle bulletcol
         {
@@ -40,7 +42,8 @@ namespace bullethell.classes
             }
             get
             {
-                return new Rectangle((int)position.X, (int)position.Y, 10, 10);
+                // - 5 centers bullet colider
+                return new Rectangle((int)position.X - 5, (int)position.Y - 5, 10, 10);
             }
         }
         public bullet(Vector2 position, float rotation)
@@ -69,6 +72,7 @@ namespace bullethell.classes
 
         public void Update(GameTime gt)
         {
+            
             timer--;
             if (timer < 0)
             {
@@ -92,7 +96,9 @@ namespace bullethell.classes
         {
             if (alive)
             {
-                
+                // rotates player bullets
+                rot += 0.1f;
+
                 SB.Begin();
                 if (bullettex == null)
                 {
@@ -100,6 +106,7 @@ namespace bullethell.classes
                     bullettex.SetData(new[] { color });
                     nosprite =  true;
                 }
+                //if has bullet image
                 if (!nosprite)
                 {
                     SB.Draw(
@@ -107,7 +114,7 @@ namespace bullethell.classes
                         position,
                         null,
                         Color.Multiply(Color.White, 1f),
-                        3.14f,
+                        rot,
                         new Vector2(bullettex.Width / 2, bullettex.Height / 2),
                         new Vector2(1, 1),
                         SpriteEffects.None,

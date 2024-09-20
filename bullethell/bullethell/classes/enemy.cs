@@ -10,14 +10,14 @@ namespace bullethell.classes
 {
     public class enemy : entity
     {
-        public player playertoenemy;
+        public player playerToEnemy;
 
         public int ID;
 
         public int lives = 3;
         public bool alive = true;
 
-        public int pointsenemy = 10;
+        public int pointsEnemy = 10;
 
         public List<item> inventory = new List<item>();
 
@@ -26,11 +26,13 @@ namespace bullethell.classes
 
         public bullet bullet1; 
         
-        public int bullettimer = 70;
-        public int bullettime = 0;
+        public int bulletTimer = 70;
+        public int bulletTime = 0;
 
 
-        public int Colormultiplyer;
+        public int deathTimer = 1000;
+
+        public int ColorMultiplyer;
 
 
 
@@ -40,18 +42,21 @@ namespace bullethell.classes
             collider = new collisionobjects();
             collider.collisionWidth = 32;
             collider.collisionHeight = 32;
-            playertoenemy = player;
-            
+            playerToEnemy = player;
+
         }
         
         public void Update(GameTime GT)
         {
-            
-
+            deathTimer--;
+            if (deathTimer < 0)
+            {
+                alive = false;
+            }
             if (lives <= 0 && alive)
             {
                 //things to do before enemy is dead
-                playertoenemy.points += pointsenemy;
+                playerToEnemy.points += pointsEnemy;
 
 
 
@@ -61,47 +66,51 @@ namespace bullethell.classes
             if (alive)
             {
                 #region gun
-                bullettime--;
+
+
+                bulletTime--;
                 foreach (var bullet in bullets)
                 {
                     bullet.Update(GT);
-                    
-                    if (playertoenemy.hitbox.Intersects(bullet.bulletcol) && bullet.alive)
+
+                    if (playerToEnemy.hitbox.Intersects(bullet.bulletcol) && bullet.alive)
                     {
-                        playertoenemy.lives -= 1;
+                        playerToEnemy.lives -= 1;
                         bullet.alive = false;
                     }
                 }
 
-                if (bullettime < 0)
+                if (bulletTime < 0)
                 {
                     bullet1 = new bullet(position + new Vector2(21,16), 1.57f);
                     bullet1.speed = 2;
                     bullet1.color = Color.Red;
                     bullets.Add(bullet1);
-                    bullettime = bullettimer;
+                    bulletTime = bulletTimer;
                 }
-                #endregion
 
+
+                #endregion
+                
                 
                 collider.UpdateCollisionObjects();
                 position += new Vector2(0, 1);
                 collider.position = position;
-                foreach (var bullet in playertoenemy.playerbullets)
+                foreach (var bullet in playerToEnemy.playerbullets)
                 {
                     if (bullet.bulletcol.Intersects(collider.hitbox))
                     {
                         bullet.alive = false;
-                        Console.WriteLine("enemy hit");
+                        //Console.WriteLine("enemy hit");
                         lives -= 1;
-                        playertoenemy.playerbullets.Remove(bullet);
+                        playerToEnemy.playerbullets.Remove(bullet);
                         return;
 
                     }
                 }
-                if (playertoenemy.hitbox.Intersects(collider.hitbox))
+                if (playerToEnemy.hitbox.Intersects(collider.hitbox))
                 {
-                    playertoenemy.lives -= 1;
+                    playerToEnemy.lives -= 1;
                     alive = false;
                 }
             }

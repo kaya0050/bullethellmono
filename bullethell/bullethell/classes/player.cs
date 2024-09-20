@@ -12,9 +12,11 @@ namespace bullethell.classes
 {
     public class player : entity
     {
+        public inputManager inputmanager = new inputManager();
+
         public int points = 50;
 
-        public int lives = 100;
+        public int lives = 3;
         public int bombs = 3;
         public bool alive = true;
 
@@ -50,24 +52,37 @@ namespace bullethell.classes
         }
         public void playerUpdate(GameTime GT, GraphicsDeviceManager graphics)
         {
+           
+
+
+
+
             if (lives <= 0)
             {
                 alive = false;
             }
             if (alive)
             {
-                #region debug
-                MouseState mouse = Mouse.GetState();
+                //moet vervangen worden met inputmanager input system
+                #region debug controls
+                
                 //var distanceToMouse = new Vector2(mouse.X - position.X, mouse.Y - position.Y);
 
                 timer--;
 
-                // center collider
+                inputmanager.VH();
+                inputmanager.MouseInput();
+
+
+                // center collider to player pos
                 collider.position = new Vector2(position.X - 16, position.Y - 16);
 
-                var keystateplayer = Keyboard.GetState();
+                
 
-                if (keystateplayer.IsKeyDown(Keys.A))
+                //vertical and horizontal input
+                
+
+                if (inputmanager.Vertical < 0)
                 {
                     if (hitbox.Left > 0)
                     {
@@ -79,7 +94,7 @@ namespace bullethell.classes
 
                     }
                 }
-                if (keystateplayer.IsKeyDown(Keys.D))
+                if (inputmanager.Vertical > 0)
                 {
                     if (hitbox.Right <= graphics.PreferredBackBufferWidth)
                     {
@@ -90,7 +105,7 @@ namespace bullethell.classes
                     }
 
                 }
-                if (keystateplayer.IsKeyDown(Keys.W))
+                if (inputmanager.Horizontal > 0)
                 {
                     if (hitbox.Top > 0)
                     {
@@ -100,8 +115,7 @@ namespace bullethell.classes
                     }
 
                 }
-
-                if (keystateplayer.IsKeyDown(Keys.S))
+                if (inputmanager.Horizontal < 0)
                 {
                     if (hitbox.Bottom < graphics.PreferredBackBufferHeight)
                     {
@@ -110,11 +124,8 @@ namespace bullethell.classes
                         collider.position.Y += speed * (float)GT.ElapsedGameTime.TotalSeconds;
                     }
                 }
-                //if (hitbox.Bottom <= graphics.PreferredBackBufferHeight + 32)
-                //{
-                //    position.Y += 500 * (float)GT.ElapsedGameTime.TotalSeconds;
-                //}
-                if (mouse.LeftButton == ButtonState.Pressed && timer <= 0)
+
+                if (inputmanager.mouseclickLeft && timer <= 0)
                 {
                     gun();
                 }
@@ -142,7 +153,7 @@ namespace bullethell.classes
 
 
 
-                // creates single pixel texture
+                //creates single pixel texture
                 if (basetex == null)
                 {
                     basetex = new Texture2D(GD, 1, 1);
@@ -163,12 +174,9 @@ namespace bullethell.classes
 
                 SB.End();
             }
-            
         }
         public void gun()
         {
-            
-            
             if (points >= 100)
             {
                 var bullet2 = new bullet(new Vector2(position.X + 48, position.Y + -32), rotation + 0.1f,textureforbullet);

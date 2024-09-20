@@ -17,7 +17,7 @@ namespace bullethell
 
         List<entity> gameobjects; 
 
-        //make public or else no Update???
+        
         public player player1;
         public collisionobjects testcollider;
 
@@ -115,13 +115,13 @@ namespace bullethell
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("fonts/font");
-            bulletsprite = Content.Load<Texture2D>("ufo");
+            bulletsprite = Content.Load<Texture2D>("cross");
             player1.textureforbullet = bulletsprite;
         }
 
         protected override void Update(GameTime gameTime)
         {
-            
+            //esc key closes app
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             { 
                 Exit();
@@ -130,8 +130,6 @@ namespace bullethell
             
             
             gamestates.UpdateState(gameTime, this, weGamin);
-
-            //weGamin.Update(gameTime,this);
 
            
             base.Update(gameTime);

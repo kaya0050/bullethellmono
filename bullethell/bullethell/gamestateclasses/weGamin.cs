@@ -17,8 +17,6 @@ namespace bullethell.gamestateclasses
             if (webegamin)
             {
 
-                //Console.WriteLine(gameTime.TotalGameTime.TotalSeconds);
-
                 //game1.testcollider.UpdateCollisionObjects();
                 game1.player1.playerUpdate(GT, game1._graphics);
                 game1.enemySpawner.Update(GT);
