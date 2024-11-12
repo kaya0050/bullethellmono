@@ -30,7 +30,7 @@ namespace bullethell.classes
         public int bulletTime = 0;
 
 
-        public int deathTimer = 1000;
+        public int deathTimer = 100000;
 
         public int ColorMultiplyer;
 
@@ -48,10 +48,11 @@ namespace bullethell.classes
         
         public void Update(GameTime GT)
         {
+
             deathTimer--;
             if (deathTimer < 0)
             {
-                alive = false;
+                //alive = false;
             }
             if (lives <= 0 && alive)
             {
@@ -82,7 +83,7 @@ namespace bullethell.classes
 
                 if (bulletTime < 0)
                 {
-                    bullet1 = new bullet(position + new Vector2(21,16), 1.57f);
+                    bullet1 = new bullet(position + new Vector2(21,16),rotation);
                     bullet1.speed = 2;
                     bullet1.color = Color.Red;
                     bullets.Add(bullet1);
@@ -94,7 +95,13 @@ namespace bullethell.classes
                 
                 
                 collider.UpdateCollisionObjects();
-                position += new Vector2(0, 1);
+
+                //position += new Vector2(0.1f, 0.1f);
+                var distance = new Vector2(playerToEnemy.position.X - position.X, playerToEnemy.position.Y - position.Y);
+                rotation = (float)Math.Atan2(distance.Y, distance.X);
+                Vector2 velocity = new Vector2((float)Math.Cos(rotation), (float)Math.Sin(rotation)) * 1;
+                position += velocity;
+
                 collider.position = position;
                 foreach (var bullet in playerToEnemy.playerbullets)
                 {
@@ -135,7 +142,7 @@ namespace bullethell.classes
                     basetex = new Texture2D(GD, 1, 1);
                     basetex.SetData(new[] { c });
                 }
-                SB.Draw(basetex, position, hitbox, Color.Multiply(Color.White, 1f), rotation, new Vector2(0, 0), 1f, SpriteEffects.None, 1);
+                SB.Draw(basetex, position, hitbox, Color.Multiply(Color.White, 1f), 0, new Vector2(0, 0), 1f, SpriteEffects.None, 1);
 
                 SB.End();
             }

@@ -1,1 +1,11 @@
-﻿make enemy bullets alive when enemy = dead || done
+﻿make timer go down with gametime || todo
+
+controller support || todo
+
+make spawn wave system || todo
+
+make ui system || todo
+
+
+
+make enemy bullets alive when enemy = dead || done

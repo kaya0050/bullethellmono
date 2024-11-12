@@ -3,17 +3,24 @@ using bullethell.gamestateclasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SharpDX.Direct3D9;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 
 namespace bullethell
 {
+    
     public class Game1 : Game
     {
+        public bool loaded = false;
         public GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
-        private GraphicsDevice device;
+        public SpriteBatch _spriteBatch;
+        public GraphicsDevice device;
+
+        public enemy enemy1;
+
 
         List<entity> gameobjects; 
 
@@ -25,19 +32,20 @@ namespace bullethell
 
         public Texture2D bulletsprite;
 
-        
-
         private SpriteFont font;
 
-        public enemySpawner enemySpawner;
+        #region spawner
+        public List<int> numbers;
+        public waveSystem wave;
         new Vector2 spawnpointlocation;
+        #endregion
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             _graphics.PreferredBackBufferHeight = 540;
             _graphics.PreferredBackBufferWidth = 720;
             Window.IsBorderless = false;
-
+            
 
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
@@ -50,8 +58,7 @@ namespace bullethell
             //gamestates = new gamestates();
             gamestates.gamestate = gamestates.state.play;
 
-            
-            
+
             player1 = new player();
             player1.name = "Timmy";
             
@@ -65,14 +72,24 @@ namespace bullethell
 
             //enemys
             spawnpointlocation = new Vector2(_graphics.PreferredBackBufferWidth / 2, -10);
-            
-            
-            
+
+
+            enemy1 = new enemy(player1);
+            enemy1.alive = true;
+
             //enemyspawner
             var enemyli = new List<enemy>();
-            
-            enemySpawner = new enemySpawner(enemyli,player1,spawnpointlocation);
-            
+            enemyli.Add(enemy1);
+
+
+            numbers = new List<int>();
+            numbers.Add(3);
+            numbers.Add(3);
+            numbers.Add(2);
+            numbers.Add(1);
+            numbers.Add(1);
+            //enemySpawner = new enemySpawner(enemyli,player1,spawnpointlocation);
+            wave = new waveSystem(enemyli,numbers,player1);
 
             
             testcollider = new collisionobjects();
@@ -109,6 +126,7 @@ namespace bullethell
 
             #endregion
             base.Initialize();
+            loaded = true;
         }
           
         protected override void LoadContent()
@@ -138,15 +156,15 @@ namespace bullethell
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-            enemySpawner.Draw(_spriteBatch,GraphicsDevice);
-            player1.playerDraw(_spriteBatch, GraphicsDevice);
 
             
 
+            
+            gamestates.drawstate(this,weGamin,device);
 
+
+            //moet nog naar ui class verplaatst worden
             _spriteBatch.Begin();
-            
-            
             _spriteBatch.DrawString(font,"lives:"+ player1.lives +"\n"+ "points:" + player1.points, new Vector2(20, 20), Color.Blue);
             _spriteBatch.End();
             base.Draw(gameTime);

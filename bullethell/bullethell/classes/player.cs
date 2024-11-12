@@ -63,8 +63,8 @@ namespace bullethell.classes
             }
             if (alive)
             {
-                //moet vervangen worden met inputmanager input system
-                #region debug controls
+                
+                #region controls
                 
                 //var distanceToMouse = new Vector2(mouse.X - position.X, mouse.Y - position.Y);
 
@@ -76,14 +76,13 @@ namespace bullethell.classes
 
                 // center collider to player pos
                 collider.position = new Vector2(position.X - 16, position.Y - 16);
-
+                
                 
 
                 //vertical and horizontal input
-                
-
                 if (inputmanager.Vertical < 0)
                 {
+                    rotation += 0.1f;
                     if (hitbox.Left > 0)
                     {
                         float pp = MathF.Sin((((float)GT.TotalGameTime.TotalSeconds * 20)));
@@ -96,6 +95,7 @@ namespace bullethell.classes
                 }
                 if (inputmanager.Vertical > 0)
                 {
+                    rotation -= 0.1f;
                     if (hitbox.Right <= graphics.PreferredBackBufferWidth)
                     {
                         float pp = MathF.Sin((((float)GT.TotalGameTime.TotalSeconds * 20)));
@@ -143,12 +143,14 @@ namespace bullethell.classes
         {
             if (alive)
             {
-                collider.color = Color.White;
-                collider.drawCollider(SB, GD);
+                collider.color = Color.DarkRed;
+
+                //collider.drawCollider(SB, GD);
                 foreach (var bullet in playerbullets)
                 {
                     bullet.draw(SB, GD);
                 }
+
                 SB.Begin();
 
 
@@ -165,13 +167,14 @@ namespace bullethell.classes
                     position,
                     hitbox,
                     Color.Multiply(Color.White, 1f),
-                    0,
-                    new Vector2(0, 0),
+                    rotation,
+                    new Vector2(16, 16),
                     1f,
                     SpriteEffects.None,
                     1
                 );
-
+                
+                
                 SB.End();
             }
         }
@@ -188,7 +191,7 @@ namespace bullethell.classes
 
                 timerdowntime = 10;
             }
-            var bullet1 = new bullet(new Vector2(position.X + 16, position.Y + -32), rotation,textureforbullet);
+            var bullet1 = new bullet(new Vector2(position.X, position.Y + -32), -1.57f,textureforbullet);
             bullet1.color = Color.Gold;
             playerbullets.Add(bullet1);
             

@@ -1,5 +1,6 @@
 ﻿using bullethell.gamestateclasses;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,11 @@ namespace bullethell.classes
 
                     break;
             }
+        }
+        public static void drawstate(Game1 game1, weGamin weGamin,GraphicsDevice device)
+        {
+            weGamin.Draw(game1);
+
         }
 
     }

@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿using bullethell.classes;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using SharpDX.Direct2D1;
+using SharpDX.Direct3D9;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -19,15 +23,22 @@ namespace bullethell.gamestateclasses
 
                 //game1.testcollider.UpdateCollisionObjects();
                 game1.player1.playerUpdate(GT, game1._graphics);
-                game1.enemySpawner.Update(GT);
+                game1.wave.Update(GT);
+                //game1.enemy1.Update(GT);
 
 
 
             }
         }
-        public void Draw()
+        public void Draw(Game1 game1)
         {
-
+            if (game1.loaded)
+            {
+                game1.wave.Draw(game1._spriteBatch,game1.GraphicsDevice);
+                game1.enemy1.Draw(game1._spriteBatch, game1.GraphicsDevice);
+                game1.player1.playerDraw(game1._spriteBatch, game1.GraphicsDevice);
+            }
+            
         }
     }
 }
