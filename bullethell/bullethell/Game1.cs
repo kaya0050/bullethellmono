@@ -1,4 +1,5 @@
-﻿using bullethell.classes;
+﻿using bullethell.audioengine.audiomanagers;
+using bullethell.classes;
 using bullethell.gamestateclasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -34,6 +35,9 @@ namespace bullethell
 
         private SpriteFont font;
 
+        public Texture2D background;
+
+
         #region spawner
         public List<int> numbers;
         public waveSystem wave;
@@ -42,8 +46,8 @@ namespace bullethell
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
-            _graphics.PreferredBackBufferHeight = 540;
-            _graphics.PreferredBackBufferWidth = 720;
+            _graphics.PreferredBackBufferHeight = 800;
+            _graphics.PreferredBackBufferWidth = 1280;
             Window.IsBorderless = false;
             
 
@@ -134,6 +138,7 @@ namespace bullethell
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("fonts/font");
             bulletsprite = Content.Load<Texture2D>("cross");
+            background = Content.Load<Texture2D>("bg");
             player1.textureforbullet = bulletsprite;
         }
 
@@ -156,10 +161,11 @@ namespace bullethell
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
+            // objects in bg draw here
+            _spriteBatch.Begin();
+            _spriteBatch.Draw(background, new Vector2(0, 0), new Rectangle(0, 0, 10000, 10000), Color.Multiply(Color.White,1f),-0.0f,new Vector2(0,0), new Vector2(0.32f,0.32f) ,SpriteEffects.None,0.0f);
+            _spriteBatch.End();
 
-            
-
-            
             gamestates.drawstate(this,weGamin,device);
 
 

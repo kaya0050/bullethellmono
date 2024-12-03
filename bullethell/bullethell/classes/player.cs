@@ -82,7 +82,7 @@ namespace bullethell.classes
                 //vertical and horizontal input
                 if (inputmanager.Vertical < 0)
                 {
-                    rotation += 0.1f;
+                    //rotation += 0.1f;
                     if (hitbox.Left > 0)
                     {
                         float pp = MathF.Sin((((float)GT.TotalGameTime.TotalSeconds * 20)));
@@ -95,7 +95,7 @@ namespace bullethell.classes
                 }
                 if (inputmanager.Vertical > 0)
                 {
-                    rotation -= 0.1f;
+                    //rotation -= 0.1f;
                     if (hitbox.Right <= graphics.PreferredBackBufferWidth)
                     {
                         float pp = MathF.Sin((((float)GT.TotalGameTime.TotalSeconds * 20)));

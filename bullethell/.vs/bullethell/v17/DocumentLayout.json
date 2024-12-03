@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|c:\\users\\kayab\\onedrive\\desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\wavesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|solutionrelative:bullethell\\classes\\wavesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|c:\\users\\kayab\\onedrive\\desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\vnclasses\\visualnovel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|solutionrelative:bullethell\\classes\\vnclasses\\visualnovel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|c:\\users\\kayab\\onedrive\\desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|solutionrelative:bullethell\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|c:\\users\\kayab\\onedrive\\desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|solutionrelative:bullethell\\classes\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|c:\\users\\kayab\\onedrive\\desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|solutionrelative:bullethell\\classes\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|c:\\users\\kayab\\onedrive\\desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\wavesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|solutionrelative:bullethell\\classes\\wavesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|c:\\users\\kayab\\onedrive\\desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\notes\\todolist.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -29,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|c:\\users\\kayab\\onedrive\\desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|solutionrelative:bullethell\\classes\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|c:\\users\\kayab\\onedrive\\desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76B0DBBC-7BE3-4B57-82F7-5C107B2F028C}|bullethell\\bullethell.csproj|solutionrelative:bullethell\\classes\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,11 +46,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 202,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "todolist.txt",
               "DocumentMoniker": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\notes\\todolist.txt",
               "RelativeDocumentMoniker": "bullethell\\notes\\todolist.txt",
@@ -58,25 +62,38 @@
               "IsPinned": true
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "visualnovel.cs",
+              "DocumentMoniker": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\vnclasses\\visualnovel.cs",
+              "RelativeDocumentMoniker": "bullethell\\classes\\vnclasses\\visualnovel.cs",
+              "ToolTip": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\vnclasses\\visualnovel.cs",
+              "RelativeToolTip": "bullethell\\classes\\vnclasses\\visualnovel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T13:53:18.217Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "waveSystem.cs",
               "DocumentMoniker": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\waveSystem.cs",
               "RelativeDocumentMoniker": "bullethell\\classes\\waveSystem.cs",
               "ToolTip": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\waveSystem.cs",
               "RelativeToolTip": "bullethell\\classes\\waveSystem.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAwwFAAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwFAAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-07T13:24:54.298Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "weGamin.cs",
               "DocumentMoniker": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\gamestateclasses\\weGamin.cs",
               "RelativeDocumentMoniker": "bullethell\\gamestateclasses\\weGamin.cs",
@@ -88,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "gamestates.cs",
               "DocumentMoniker": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\gamestates.cs",
               "RelativeDocumentMoniker": "bullethell\\classes\\gamestates.cs",
@@ -106,26 +123,27 @@
               "RelativeDocumentMoniker": "bullethell\\Game1.cs",
               "ToolTip": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\Game1.cs",
               "RelativeToolTip": "bullethell\\Game1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAwwKUAAACtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-15T11:00:38.364Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "player.cs",
               "DocumentMoniker": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\player.cs",
               "RelativeDocumentMoniker": "bullethell\\classes\\player.cs",
               "ToolTip": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\player.cs",
               "RelativeToolTip": "bullethell\\classes\\player.cs",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAIwJIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T11:25:55.444Z"
+              "WhenOpened": "2024-09-20T11:25:55.444Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "bullet.cs",
               "DocumentMoniker": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\bullet.cs",
               "RelativeDocumentMoniker": "bullethell\\classes\\bullet.cs",
@@ -137,15 +155,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "enemy.cs",
               "DocumentMoniker": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\enemy.cs",
               "RelativeDocumentMoniker": "bullethell\\classes\\enemy.cs",
               "ToolTip": "C:\\Users\\kayab\\OneDrive\\Desktop\\bullethellmono\\bullethellmono\\bullethell\\bullethell\\classes\\enemy.cs",
               "RelativeToolTip": "bullethell\\classes\\enemy.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAA5wDYAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAQwIYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-29T09:07:33.439Z"
+              "WhenOpened": "2024-05-29T09:07:33.439Z",
+              "EditorCaption": ""
             }
           ]
         }

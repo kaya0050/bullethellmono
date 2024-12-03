@@ -4,15 +4,19 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/cross.png</File>
-    <File>C:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/fonts/font.spritefont</File>
-    <File>C:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/heart1.png</File>
-    <File>C:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/heart2.png</File>
-    <File>C:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/heart3.png</File>
-    <File>C:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/heart4.png</File>
-    <File>C:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/ufo.png</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/../art/bg.png</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/bg.png</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/cross.png</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/fonts/font.spritefont</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/heart1.png</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/heart2.png</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/heart3.png</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/heart4.png</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/ufo.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>bg.png</File>
+    <File>bgold.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -80,3 +80,5 @@ C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bulleth
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Debug\net6.0-windows\Content\heart3.xnb
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Debug\net6.0-windows\Content\heart4.xnb
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Debug\net6.0-windows\Content\ufo.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Debug\net6.0-windows\Content\bg.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Debug\net6.0-windows\Content\bgold.xnb
