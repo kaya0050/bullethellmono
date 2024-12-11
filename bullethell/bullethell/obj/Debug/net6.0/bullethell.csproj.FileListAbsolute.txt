@@ -1,0 +1,5 @@
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0\bullethell.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0\bullethell.AssemblyInfoInputs.cache
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0\bullethell.AssemblyInfo.cs
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0\bullethell.csproj.CoreCompileInputs.cache
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\Debug\net6.0\bullethell.sourcelink.json

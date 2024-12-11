@@ -1,5 +1,6 @@
 ﻿using bullethell.audioengine.audiomanagers;
 using bullethell.classes;
+using bullethell.classes.vnclasses;
 using bullethell.gamestateclasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -37,6 +38,15 @@ namespace bullethell
 
         public Texture2D background;
 
+
+        public Vector2 windDir = new Vector2(50f,100f);
+
+
+        #region testcharacter
+        public character testcharacter;
+        public Texture2D testCharsprite;
+
+        #endregion
 
         #region spawner
         public List<int> numbers;
@@ -129,6 +139,7 @@ namespace bullethell
             }
 
             #endregion
+
             base.Initialize();
             loaded = true;
         }
@@ -149,12 +160,12 @@ namespace bullethell
             { 
                 Exit();
             }
-            
-            
+
+            player1.position += (windDir * new Vector2((float)gameTime.ElapsedGameTime.TotalSeconds, (float)gameTime.ElapsedGameTime.TotalSeconds));
             
             gamestates.UpdateState(gameTime, this, weGamin);
 
-           
+            
             base.Update(gameTime);
         }
         
@@ -163,12 +174,12 @@ namespace bullethell
             GraphicsDevice.Clear(Color.Black);
             // objects in bg draw here
             _spriteBatch.Begin();
-            _spriteBatch.Draw(background, new Vector2(0, 0), new Rectangle(0, 0, 10000, 10000), Color.Multiply(Color.White,1f),-0.0f,new Vector2(0,0), new Vector2(0.32f,0.32f) ,SpriteEffects.None,0.0f);
+            _spriteBatch.Draw(background, new Vector2(75, 0), new Rectangle(0, 0, 10000, 10000), Color.Multiply(Color.White,1f),-0.0f,new Vector2(0,0), new Vector2(0.32f,0.32f) ,SpriteEffects.None,0.0f);
             _spriteBatch.End();
 
             gamestates.drawstate(this,weGamin,device);
 
-
+             
             //moet nog naar ui class verplaatst worden
             _spriteBatch.Begin();
             _spriteBatch.DrawString(font,"lives:"+ player1.lives +"\n"+ "points:" + player1.points, new Vector2(20, 20), Color.Blue);

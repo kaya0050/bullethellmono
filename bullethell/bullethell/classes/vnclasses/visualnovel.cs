@@ -10,6 +10,7 @@ namespace bullethell.classes.vnclasses
     internal class visualnovel
     {
         public Texture2D BG;
+
         public string Text;
         public string charname;
         

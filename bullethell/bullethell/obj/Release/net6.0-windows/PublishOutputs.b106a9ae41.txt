@@ -1,10 +1,13 @@
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Release\net6.0-windows\publish\bullethell.exe
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Release\net6.0-windows\publish\Content/bg.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Release\net6.0-windows\publish\Content/bgold.xnb
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Release\net6.0-windows\publish\Content/cross.xnb
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Release\net6.0-windows\publish\Content/fonts\font.xnb
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Release\net6.0-windows\publish\Content/heart1.xnb
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Release\net6.0-windows\publish\Content/heart2.xnb
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Release\net6.0-windows\publish\Content/heart3.xnb
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Release\net6.0-windows\publish\Content/heart4.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Release\net6.0-windows\publish\Content/ufo.xnb
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Release\net6.0-windows\publish\bullethell.dll
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Release\net6.0-windows\publish\bullethell.deps.json
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\Release\net6.0-windows\publish\bullethell.runtimeconfig.json

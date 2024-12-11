@@ -5,7 +5,8 @@
     <RollForward>Major</RollForward>
     <PublishReadyToRun>false</PublishReadyToRun>
     <TieredCompilation>false</TieredCompilation>
-    <UseWindowsForms>true</UseWindowsForms>
+    <UseWindowsForms>False</UseWindowsForms>
+    <Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
