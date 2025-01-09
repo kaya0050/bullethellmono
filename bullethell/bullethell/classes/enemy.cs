@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework.Input;
 
 namespace bullethell.classes
 {
@@ -38,7 +39,7 @@ namespace bullethell.classes
 
         public enemy(player player)
         {
-            position = new Vector2 (200, 50);
+            position = new Vector2 (0, 0);
             collider = new collisionobjects();
             collider.collisionWidth = 32;
             collider.collisionHeight = 32;
@@ -77,7 +78,10 @@ namespace bullethell.classes
                     if (playerToEnemy.hitbox.Intersects(bullet.bulletcol) && bullet.alive)
                     {
                         playerToEnemy.lives -= 1;
+                        
+
                         bullet.alive = false;
+                       
                     }
                 }
 

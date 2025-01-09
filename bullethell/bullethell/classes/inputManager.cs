@@ -10,6 +10,13 @@ namespace bullethell.classes
 {
     public class inputManager
     {
+
+        #region controller
+        public Vector2 velocity = new Vector2();
+        #endregion
+
+
+
         KeyboardState keystate;
         #region AxisButtons
         public float Horizontal;
@@ -49,7 +56,7 @@ namespace bullethell.classes
         #region Mouse
         MouseState mouseState;
         public Vector2 mousePosition;
-        public bool mouseclickLeft;
+        public bool shootbutton1;
         public bool mouseclickRight;
 
         public Rectangle mouseRect;
@@ -62,8 +69,8 @@ namespace bullethell.classes
 
             #region GetinputFunctions
             VH();
-            Shoot(Input);
-            Menu(Input);
+            Shoot();
+            Menu();
             MouseInput();
             #endregion  
         }
@@ -82,10 +89,7 @@ namespace bullethell.classes
             {
                 Vertical = -1;
             }
-            else
-            {
-                Vertical = 0;
-            }
+
             #endregion
 
             #region Horizontal
@@ -97,26 +101,83 @@ namespace bullethell.classes
             {
                 Horizontal = -1;
             }
+
+            #endregion
+
+
+            #region controller
+            if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < 0.0f)
+            {
+                Vertical = 1 * GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X;
+            }
+            else if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X > 0.0f)
+            {
+                Vertical = 1 * GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X;
+            }
+            else
+            {
+                Vertical = 0;
+            }
+
+            if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y < 0.0f)
+            {
+                Horizontal = 1 * GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y;
+            }
+            else if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y > 0.0f)
+            {
+                Horizontal = 1 * GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y;
+            }
             else
             {
                 Horizontal = 0;
             }
             #endregion
+
+            velocity.X = Vertical;
+            velocity.Y = -Horizontal;
+
+            //velocity.Normalize();
+
+
+
+            
+            
         }
         
-        public void Shoot(KeyboardState Input)
+        public void Shoot()
         {
-            Shoot1 = Input.IsKeyDown(Shoot1_key);
-            Shoot1 = Input.IsKeyDown(Shoot2_key);
-            Shoot1 = Input.IsKeyDown(Shoot3_key);
-            Shoot1 = Input.IsKeyDown(Shoot4_key);
+            if (GamePad.GetState(PlayerIndex.One).Buttons.A == ButtonState.Pressed)
+            {
+                shootbutton1 = true;
+
+
+                GamePad.SetVibration(PlayerIndex.One, 1f, 1f);
+
+
+            }
+            else
+            {
+                shootbutton1 = false;
+                GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
+            }
+
+
         }
 
-        public void Menu(KeyboardState Input)
+        public void Menu()
         {
-            Accept = Input.IsKeyDown(Accept_key);
-            Deny = Input.IsKeyDown(Deny_key);
-            Back = Input.IsKeyDown(Back_key);
+            //Accept = Input.IsKeyDown(Accept_key);
+            if(GamePad.GetState(PlayerIndex.One).Buttons.B == ButtonState.Pressed)
+            {
+                Accept = true;  
+            }
+            else
+            {
+                Accept = false;
+            }
+            
+            //Deny = Input.IsKeyDown(Deny_key);
+            //Back = Input.IsKeyDown(Back_key);
         }
 
         public void MouseInput()
@@ -129,11 +190,11 @@ namespace bullethell.classes
             #region MouseButtons
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
-                mouseclickLeft = true;
+                shootbutton1 = true;
             }
             else 
             { 
-                mouseclickLeft = false; 
+                shootbutton1 = false; 
             }
 
 

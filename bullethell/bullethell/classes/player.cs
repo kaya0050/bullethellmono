@@ -16,19 +16,19 @@ namespace bullethell.classes
 
         public int points = 50;
 
-        public int lives = 3;
+        public int lives = 30;
         public int bombs = 3;
         public bool alive = true;
 
         public List<item> Inventory = new List<item>();
 
-
+        public bool reverse;
 
         public Vector2 position;
         public float rotation = -1.57f;
         public int speed = 200;
-        public int width = 32;
-        public int height = 32;
+        public int width = 16;
+        public int height = 16;
 
         public collisionobjects collider = new collisionobjects();
 
@@ -38,10 +38,12 @@ namespace bullethell.classes
         public int timerdowntime = 10;
 
         public Texture2D textureforbullet;
+        public Texture2D playertexture;
+
         public player()
         {
-            collider.collisionWidth = 64;
-            collider.collisionHeight = 64;
+            collider.collisionWidth = 16;
+            collider.collisionHeight = 16;
         }
         public Rectangle hitbox
         {
@@ -50,16 +52,26 @@ namespace bullethell.classes
                 return new Rectangle((int)position.X, (int)position.Y, width, height);
             }
         }
+        bool one = false;
         public void playerUpdate(GameTime GT, GraphicsDeviceManager graphics)
         {
-           
 
+            if (reverse && one == false)
+            {
+                speed *= -1;
+                one = true;
+            }
+            else if (!reverse && one == true)
+            {
+                speed *= -1;
+            }
 
 
 
             if (lives <= 0)
             {
                 alive = false;
+                GamePad.SetVibration(PlayerIndex.One,0,0);
             }
             if (alive)
             {
@@ -72,60 +84,18 @@ namespace bullethell.classes
 
                 inputmanager.VH();
                 inputmanager.MouseInput();
-
+                inputmanager.Shoot();
 
                 // center collider to player pos
-                collider.position = new Vector2(position.X - 16, position.Y - 16);
-                
-                
+                collider.position = new Vector2(position.X, position.Y);
 
-                //vertical and horizontal input
-                if (inputmanager.Vertical < 0)
-                {
-                    //rotation += 0.1f;
-                    if (hitbox.Left > 0)
-                    {
-                        float pp = MathF.Sin((((float)GT.TotalGameTime.TotalSeconds * 20)));
+                position += inputmanager.velocity * (float)GT.ElapsedGameTime.TotalSeconds * speed;
+                collider.position += inputmanager.velocity * speed * (float)GT.ElapsedGameTime.TotalSeconds;
 
 
-                        position.X -= speed * (float)GT.ElapsedGameTime.TotalSeconds;
-                        collider.position.X -= speed * (float)GT.ElapsedGameTime.TotalSeconds;
 
-                    }
-                }
-                if (inputmanager.Vertical > 0)
-                {
-                    //rotation -= 0.1f;
-                    if (hitbox.Right <= graphics.PreferredBackBufferWidth)
-                    {
-                        float pp = MathF.Sin((((float)GT.TotalGameTime.TotalSeconds * 20)));
 
-                        position.X += speed * (float)GT.ElapsedGameTime.TotalSeconds;
-                        collider.position.X += speed * (float)GT.ElapsedGameTime.TotalSeconds;
-                    }
-
-                }
-                if (inputmanager.Horizontal > 0)
-                {
-                    if (hitbox.Top > 0)
-                    {
-
-                        position.Y -= speed * (float)GT.ElapsedGameTime.TotalSeconds;
-                        collider.position.Y -= speed * (float)GT.ElapsedGameTime.TotalSeconds;
-                    }
-
-                }
-                if (inputmanager.Horizontal < 0)
-                {
-                    if (hitbox.Bottom < graphics.PreferredBackBufferHeight)
-                    {
-
-                        position.Y += speed * (float)GT.ElapsedGameTime.TotalSeconds;
-                        collider.position.Y += speed * (float)GT.ElapsedGameTime.TotalSeconds;
-                    }
-                }
-
-                if (inputmanager.mouseclickLeft && timer <= 0)
+                if (inputmanager.shootbutton1 && timer <= 0)
                 {
                     gun();
                 }
@@ -153,28 +123,34 @@ namespace bullethell.classes
 
                 SB.Begin();
 
-
-
-                //creates single pixel texture
-                if (basetex == null)
-                {
-                    basetex = new Texture2D(GD, 1, 1);
-                    basetex.SetData(new[] { color });
-                }
-
                 SB.Draw(
-                    basetex,
+                    playertexture,
                     position,
-                    hitbox,
-                    Color.Multiply(Color.White, 1f),
-                    rotation,
-                    new Vector2(16, 16),
-                    1f,
+                    null,
+                    Color.White,
+                    0,
+                    new Vector2(105, 112),
+                    0.3f,
                     SpriteEffects.None,
                     1
                 );
-                
-                
+                basetex = new Texture2D(GD, 1, 1);
+                basetex.SetData(new[] { color });
+
+                SB.Draw(
+                basetex,
+                position,
+                hitbox,
+                Color.Multiply(Color.DarkBlue, 1f),
+                0,
+                new Vector2(0, 0),
+                1f,
+                SpriteEffects.None,
+                1
+                );
+
+
+
                 SB.End();
             }
         }
@@ -182,7 +158,7 @@ namespace bullethell.classes
         {
             if (points >= 100)
             {
-                var bullet2 = new bullet(new Vector2(position.X + 48, position.Y + -32), rotation + 0.1f,textureforbullet);
+                var bullet2 = new bullet(new Vector2(position.X + 16, position.Y + -32), rotation + 0.1f,textureforbullet);
                 bullet2.color = Color.Green;
                 var bullet3 = new bullet(new Vector2(position.X + -16, position.Y + -32), rotation + -0.1f,textureforbullet);
                 bullet3.color = Color.Red;

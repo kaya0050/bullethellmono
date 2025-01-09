@@ -8,5 +8,6 @@ namespace bullethell.gamestateclasses
 {
     internal class paused
     {
+        
     }
 }

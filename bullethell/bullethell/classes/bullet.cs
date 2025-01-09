@@ -42,7 +42,7 @@ namespace bullethell.classes
             get
             {
                 // - 5 centers bullet collider
-                return new Rectangle((int)position.X - 5, (int)position.Y - 5, 10, 10);
+                return new Rectangle((int)position.X, (int)position.Y, 10, 10);
             }
         }
         public bullet(Vector2 position, float rotation)
@@ -115,7 +115,7 @@ namespace bullethell.classes
                         Color.Multiply(Color.White, 1f),
                         rot,
                         new Vector2(bullettex.Width / 2, bullettex.Height / 2),
-                        new Vector2(1, 1),
+                        1f,
                         SpriteEffects.None,
                         0f
                    );
@@ -127,9 +127,9 @@ namespace bullethell.classes
                        position,
                        bulletcol,
                        Color.Multiply(Color.White, 1f),
-                       3.14f,
-                       new Vector2(bullettex.Width / 2, bullettex.Height / 2),
-                       new Vector2(1, 1),
+                       0,
+                       new Vector2(0, 0),
+                       1f,
                        SpriteEffects.None,
                        0f
                   );

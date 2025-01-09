@@ -5,18 +5,32 @@
   <Config />
   <SourceFiles>
     <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/../art/bg.png</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/3dmodels/sword.fbx</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/audio/test.mp3</File>
     <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/bg.png</File>
     <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/cross.png</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/firework.fbx</File>
     <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/fonts/font.spritefont</File>
     <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/heart1.png</File>
     <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/heart2.png</File>
     <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/heart3.png</File>
     <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/heart4.png</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/sprites/bullet.png</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/sprites/witch.png</File>
     <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/ufo.png</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/vnassets/test.png</File>
+    <File>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/vnassets/textbox.png</File>
   </SourceFiles>
   <DestFiles>
     <File>bg.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File>bgold.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

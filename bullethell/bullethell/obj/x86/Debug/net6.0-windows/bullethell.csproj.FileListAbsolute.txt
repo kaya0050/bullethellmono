@@ -45,3 +45,13 @@ C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bulleth
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\x86\Debug\net6.0-windows\bullethell.pdb
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\x86\Debug\net6.0-windows\bullethell.genruntimeconfig.cache
 C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\obj\x86\Debug\net6.0-windows\ref\bullethell.dll
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\x86\Debug\net6.0-windows\Content\3dmodels\sword.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\x86\Debug\net6.0-windows\Content\3dmodels\swordold.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\x86\Debug\net6.0-windows\Content\firework.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\x86\Debug\net6.0-windows\Content\vnassets\textbox.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\x86\Debug\net6.0-windows\Content\vnassets\test.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\x86\Debug\net6.0-windows\Content\audio\test.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\x86\Debug\net6.0-windows\Content\audio\test.wma
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\x86\Debug\net6.0-windows\Content\audio\testnotworking.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\x86\Debug\net6.0-windows\Content\sprites\witch.xnb
+C:\Users\kayab\OneDrive\Desktop\bullethellmono\bullethellmono\bullethell\bullethell\bin\x86\Debug\net6.0-windows\Content\sprites\bullet.xnb

@@ -18,7 +18,7 @@ namespace bullethell.classes
         public List<enemy> enemies = new List<enemy>();
         public int count = 1;
 
-        public Vector2 spawnpoint = new Vector2(0,0);
+        public Vector2 spawnpoint = new Vector2(640,50);
 
         public player playerspawner;
 
@@ -36,7 +36,9 @@ namespace bullethell.classes
             Console.WriteLine(enemies.Count);
             if (enemies.Count < 2)
             {
+                enemy.position = spawnpoint;
                 enemies.Add(enemy);
+                
             }
         }
         public void Update(GameTime gt)

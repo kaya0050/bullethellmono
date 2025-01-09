@@ -1,4 +1,5 @@
 ﻿using bullethell.classes;
+using bullethell.classes.vnclasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SharpDX.Direct2D1;
@@ -16,28 +17,47 @@ namespace bullethell.gamestateclasses
     {
         public bool webegamin = false;
         public Game1 Game1;
+        public visualnovel visualnovel = new visualnovel(true);
         public void Update(GameTime GT,Game1 game1)
         {
             if (webegamin)
             {
+                if (game1.loaded)
+                {
+                   
+                    visualnovel.updatetext();
+                    visualnovel.textbox = game1.textbox;
+                    visualnovel.character.sprite = game1.test;
+                    //visualnovel.character.position = new Vector2 (130,300);
+                    if (visualnovel.end)
+                    {
+                        game1.player1.playerUpdate(GT, game1._graphics);
+                        game1.wave.Update(GT);
+                    }
+                }
 
-                //game1.testcollider.UpdateCollisionObjects();
-                game1.player1.playerUpdate(GT, game1._graphics);
-                game1.wave.Update(GT);
-                //game1.enemy1.Update(GT);
 
 
 
             }
+
         }
         public void Draw(Game1 game1)
         {
-            if (game1.loaded)
+            if (webegamin)
             {
-                game1.wave.Draw(game1._spriteBatch,game1.GraphicsDevice);
-                game1.enemy1.Draw(game1._spriteBatch, game1.GraphicsDevice);
-                game1.player1.playerDraw(game1._spriteBatch, game1.GraphicsDevice);
+                if (game1.loaded)
+                {
+                    if (visualnovel.end)
+                    {
+                        game1.wave.Draw(game1._spriteBatch, game1.GraphicsDevice);
+                        game1.player1.playerDraw(game1._spriteBatch, game1.GraphicsDevice);
+                    }
+                    
+                    visualnovel.drawtext(game1._spriteBatch, game1.font);
+                }
             }
+            
             
         }
     }
