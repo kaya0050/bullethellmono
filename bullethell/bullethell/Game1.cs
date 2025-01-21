@@ -21,6 +21,9 @@ namespace bullethell
         RasterizerState rasterizerState;
         public util uti;
 
+
+
+
         #region 3d
         Matrix modelposMA;
         Model Modelload;
@@ -51,6 +54,10 @@ namespace bullethell
 
         #region player
         public Texture2D playersprite;
+        #endregion
+
+        #region testboss
+        public Texture2D testbosssprite;
         #endregion
 
         public bool loaded = false;

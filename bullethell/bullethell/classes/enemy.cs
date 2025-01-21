@@ -27,15 +27,15 @@ namespace bullethell.classes
 
         public bullet bullet1; 
         
-        public int bulletTimer = 70;
+        public int bulletTimer = 50;
         public int bulletTime = 0;
 
 
-        public int deathTimer = 100000;
+        public int deathTimer = 1000;
 
         public int ColorMultiplyer;
 
-
+        public float gunrot = 0;
 
         public enemy(player player)
         {
@@ -46,14 +46,49 @@ namespace bullethell.classes
             playerToEnemy = player;
 
         }
-        
+        public virtual void gun(GameTime GT)
+        {
+
+            bulletTime--;
+            foreach (var bullet in bullets)
+            {
+                bullet.Update(GT);
+
+                if (playerToEnemy.hitbox.Intersects(bullet.bulletcol) && bullet.alive)
+                {
+                    playerToEnemy.lives -= 1;
+
+
+                    bullet.alive = false;
+
+                }
+            }
+
+            if (bulletTime < 0)
+            {
+
+
+
+                for (int i = 0; i < 20; i++)
+                {
+                    bullet bullet2 = new bullet(position + new Vector2(16, 16), (gunrot + i));
+                    bullet2.speed = 2;
+                    bullet2.color = new Color(255, 255, i * 10);
+                    bullets.Add(bullet2);
+
+
+                }
+                gunrot += 0.07f;
+                bulletTime = bulletTimer;
+            }
+        }
         public void Update(GameTime GT)
         {
 
             deathTimer--;
             if (deathTimer < 0)
             {
-                //alive = false;
+                alive = false;
             }
             if (lives <= 0 && alive)
             {
@@ -65,39 +100,17 @@ namespace bullethell.classes
                 alive = false;
             }
 
+
+           
+
             if (alive)
             {
-                #region gun
+                gun(GT);
 
 
-                bulletTime--;
-                foreach (var bullet in bullets)
-                {
-                    bullet.Update(GT);
-
-                    if (playerToEnemy.hitbox.Intersects(bullet.bulletcol) && bullet.alive)
-                    {
-                        playerToEnemy.lives -= 1;
-                        
-
-                        bullet.alive = false;
-                       
-                    }
-                }
-
-                if (bulletTime < 0)
-                {
-                    bullet1 = new bullet(position + new Vector2(21,16),rotation);
-                    bullet1.speed = 2;
-                    bullet1.color = Color.Red;
-                    bullets.Add(bullet1);
-                    bulletTime = bulletTimer;
-                }
 
 
-                #endregion
-                
-                
+
                 collider.UpdateCollisionObjects();
 
                 //position += new Vector2(0.1f, 0.1f);

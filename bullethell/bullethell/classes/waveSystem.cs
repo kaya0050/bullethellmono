@@ -34,7 +34,7 @@ namespace bullethell.classes
             //je moet een niewe enemy aanmaken anders gebriukt hij dezelfde als die dood is
             enemy enemy = new enemy(playerspawner);
             Console.WriteLine(enemies.Count);
-            if (enemies.Count < 2)
+            if (enemies.Count < 1)
             {
                 enemy.position = spawnpoint;
                 enemies.Add(enemy);

@@ -151,7 +151,7 @@ namespace bullethell.classes
                 shootbutton1 = true;
 
 
-                GamePad.SetVibration(PlayerIndex.One, 1f, 1f);
+                GamePad.SetVibration(PlayerIndex.One, 0.1f, 0.1f);
 
 
             }

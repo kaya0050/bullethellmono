@@ -57,7 +57,7 @@ namespace bullethell.classes.vnclasses
             Text.Add("wow");
             Text.Add("super cool");
             Text.Add("(o_0)");
-            Text.Add("0000 coolie joelie so cool blabla bla bla cool blabla bla bla \ncool blabla bla bla cool blabla bla bla");
+            Text.Add("coolie joelie so cool blabla bla bla cool blabla bla bla \ncool blabla bla bla cool blabla bla bla");
             Text.Add("endtext");
 
             Charnames = new List<string>();
