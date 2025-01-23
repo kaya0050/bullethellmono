@@ -9,3 +9,5 @@ make ui system || todo
 
 
 make enemy bullets alive when enemy = dead || done
+
+make enemys move with checkpoint system

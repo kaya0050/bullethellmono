@@ -28,11 +28,12 @@ namespace bullethell.gamestateclasses
                     visualnovel.updatetext();
                     visualnovel.textbox = game1.textbox;
                     visualnovel.character.sprite = game1.test;
-                    //visualnovel.character.position = new Vector2 (130,300);
+                    visualnovel.character.position = new Vector2 (130,300);
                     if (visualnovel.end)
                     {
-                        game1.player1.playerUpdate(GT, game1._graphics);
                         game1.wave.Update(GT);
+                        game1.player1.playerUpdate(GT, game1._graphics);
+                        game1.boss1.Update(GT);
                     }
                 }
 
@@ -52,6 +53,7 @@ namespace bullethell.gamestateclasses
                     {
                         game1.wave.Draw(game1._spriteBatch, game1.GraphicsDevice);
                         game1.player1.playerDraw(game1._spriteBatch, game1.GraphicsDevice);
+                        game1.boss1.Draw(game1._spriteBatch, game1.GraphicsDevice);
                     }
                     
                     visualnovel.drawtext(game1._spriteBatch, game1.font);

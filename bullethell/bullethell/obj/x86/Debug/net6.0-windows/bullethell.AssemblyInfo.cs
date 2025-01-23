@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("bullethell")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74bbb19a03225561c4967f1419bc11dcb9e3cc8a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d71b19e04707b05e94941b10f7c5aadb3ac193e")]
 [assembly: System.Reflection.AssemblyProductAttribute("bullethell")]
 [assembly: System.Reflection.AssemblyTitleAttribute("bullethell")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

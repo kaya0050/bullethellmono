@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/audio/test.mp3</SourceFile>
+  <SourceFile>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/audio/test.mp3</SourceFile>
   <SourceTime>2025-01-08T15:00:26.9513411+01:00</SourceTime>
-  <DestFile>C:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/bin/Windows/Content/audio/test.xnb</DestFile>
-  <DestTime>2025-01-09T09:33:07.7662333+01:00</DestTime>
+  <DestFile>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/bin/Windows/Content/audio/test.xnb</DestFile>
+  <DestTime>2025-01-23T13:05:49.2441383+01:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/bin/Windows/Content/audio/test.wma</string>
+    <string>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/bin/Windows/Content/audio/test.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>

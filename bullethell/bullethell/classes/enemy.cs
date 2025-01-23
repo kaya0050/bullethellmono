@@ -39,7 +39,7 @@ namespace bullethell.classes
 
         public enemy(player player)
         {
-            position = new Vector2 (0, 0);
+            position = new Vector2(0, 0);
             collider = new collisionobjects();
             collider.collisionWidth = 32;
             collider.collisionHeight = 32;

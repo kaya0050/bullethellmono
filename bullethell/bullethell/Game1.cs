@@ -11,6 +11,7 @@ using static bullethell.classes.util;
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using bullethell.classes.bosses;
 
 
 namespace bullethell
@@ -21,7 +22,9 @@ namespace bullethell
         RasterizerState rasterizerState;
         public util uti;
 
-
+        #region bosses
+        public boss1 boss1;
+        #endregion
 
 
         #region 3d
@@ -197,10 +200,12 @@ namespace bullethell
             #endregion
 
             //Console.WriteLine(Modelload.ToString());
+            #region bosses
+            boss1 = new boss1(player1);
+            #endregion
 
 
 
-            
 
             base.Initialize();
             
