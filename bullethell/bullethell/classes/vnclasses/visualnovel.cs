@@ -12,6 +12,7 @@ namespace bullethell.classes.vnclasses
 {
     public class visualnovel
     {
+        Dictionary<string,string> textandname = new Dictionary<string,string>();
         public inputManager inputmanager = new inputManager();
 
         public List<character> characters;

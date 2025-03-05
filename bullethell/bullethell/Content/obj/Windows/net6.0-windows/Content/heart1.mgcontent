@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/heart1.png</SourceFile>
+  <SourceFile>C:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/heart1.png</SourceFile>
   <SourceTime>2024-11-27T13:14:22.3142038+01:00</SourceTime>
-  <DestFile>c:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/bin/Windows/Content/heart1.xnb</DestFile>
-  <DestTime>2025-01-23T13:05:51.6730419+01:00</DestTime>
+  <DestFile>C:/Users/kayab/OneDrive/Desktop/bullethellmono/bullethellmono/bullethell/bullethell/Content/bin/Windows/Content/heart1.xnb</DestFile>
+  <DestTime>2025-01-23T14:02:09.7505646+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

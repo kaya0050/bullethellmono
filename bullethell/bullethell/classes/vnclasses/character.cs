@@ -43,7 +43,6 @@ namespace bullethell.classes.vnclasses
                 SB.Draw(sprite, rectangle, Color.Multiply(Color.White, 1f));
 
             }
-           
         }
     }
 }

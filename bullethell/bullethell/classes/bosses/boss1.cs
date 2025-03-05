@@ -120,7 +120,7 @@ namespace bullethell.classes.bosses
                 collider.drawCollider(SB, GD);
                 SB.Begin();
                 var c = new Color(100, 0, 0);
-
+                
                 // creates single pixel texture
                 if (basetex == null)
                 {
